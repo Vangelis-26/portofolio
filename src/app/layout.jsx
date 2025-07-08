@@ -1,7 +1,5 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -31,16 +29,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  console.log(jetBrainsMono)
   return (
     <html lang="fr">
-      <body
-        className={`${jetBrainsMono.className} bg-stone-900 text-white min-h-screen flex flex-col`}
-      >
-        <Header />
-        <main className="h-full flex-1 flex-col items-center">{children}
-        </main>
-        <Footer />
+      <body className={`${jetBrainsMono.className} bg-stone-900 text-white min-h-screen flex flex-col`}>
+        {children}
       </body>
     </html>
   );
