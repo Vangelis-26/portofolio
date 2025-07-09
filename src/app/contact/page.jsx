@@ -68,7 +68,7 @@ export default function Form() {
     return (
         <>
             <Header />
-            <section className='flex flex-col items-center justify-center flex-grow py-10'>
+            <main className='flex flex-col items-center justify-center flex-grow py-10'>
                 <form onSubmit={handleSubmit} noValidate className='flex flex-col md:flex-row bg-stone-800 p-10 rounded-lg max-w-4xl w-full'>
 
                     {/* Colonne de gauche */}
@@ -136,7 +136,7 @@ export default function Form() {
                         </div>
                     </div>
                 </form>
-            </section>
+            </main>
             <Footer />
         </>
     )
