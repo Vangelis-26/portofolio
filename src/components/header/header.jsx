@@ -1,22 +1,32 @@
 import NavLinks from "../navLinks/navLinks";
 import Image from "next/image";
-import Banniere from "../../../public/banniere.webp";
 import "../../app/globals.css";
-
-
 
 export default function Header() {
   return (
-    <header className="w-full bg-stone-800 p-4 text-sm">
-      <div>
-        <NavLinks />
-        <Image
-          src={Banniere}
-          alt="Image d'acceuil"
-          style={{ width: "100%", height: "auto", borderRadius: "2.5rem", padding: "1rem 0" }}
-          priority
-        />
+    <header className="relative w-full h-64 md:h-80 text-white">
+
+      <Image
+        src="/banniere.webp"
+        alt="Bannière de la page d'accueil"
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
+
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="p-4">
+          <NavLinks />
+        </div>
+
+        <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold">Mourier Matthieu</h1>
+          <p className="mt-2 text-lg">Développeur Web FullStack</p>
+        </div>
       </div>
+
     </header>
   );
 }

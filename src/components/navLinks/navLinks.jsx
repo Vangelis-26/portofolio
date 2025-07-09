@@ -18,8 +18,8 @@ export default function NavLinks() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/formations" className={pathname === "/formations" ? "active" : ""}>
-                        Formations
+                    <Link href="/career" className={pathname === "/career" ? "active" : ""}>
+                        Parcours
                     </Link>
                 </li>
                 <li>

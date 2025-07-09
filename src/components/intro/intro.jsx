@@ -1,7 +1,6 @@
 export default function Intro() {
     return (
         <main className="flex flex-col items-center justify-center py-8">
-            <h1 className="text-4xl font-bold mb-4">Mourier Matthieu - Développeur Web</h1>
             <section className="mb-8 px-100 text-justify">
                 <p className="m-8 ">Avec plus de quinze ans d'expérience au cœur de secteurs dynamiques, mon orientation vers le développement web est une suite logique, motivée par le désir de construire les solutions de demain. Mon parcours m'a permis de cultiver un sens aigu de la relation client et du commerce, que ce soit en conseillant des clients, en gérant des actions commerciales ou en assurant le déploiement de projets d'envergure.
                 </p>
