@@ -1,8 +1,9 @@
-import { JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const jetBrainsMono = JetBrains_Mono({
+const inter = Inter({
   subsets: ["latin"],
+  weight: "500",
 });
 
 export const metadata = {
@@ -31,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${jetBrainsMono.className} bg-stone-900 text-white min-h-screen flex flex-col`}>
+      <body className={`${inter.className} bg-(--color-background) text-white min-h-screen flex flex-col`}>
         {children}
       </body>
     </html>

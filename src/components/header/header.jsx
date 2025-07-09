@@ -14,6 +14,7 @@ export default function Header() {
           src={Banniere}
           alt="Image d'acceuil"
           style={{ width: "100%", height: "auto", borderRadius: "2.5rem", padding: "1rem 0" }}
+          priority
         />
       </div>
     </header>

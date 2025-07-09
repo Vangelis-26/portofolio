@@ -1,7 +1,15 @@
-export default function CustomSelect({ children }) {
+export default function CustomSelect({ children, id, name, className, ...props }) {
+
+    const selectClasses = "text-sm bg-stone-700 p-2 rounded-md my-2 w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200";
+
     return (
-        <select className="bg-stone-700 p-1 text-white rounded ml-4 my-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all duration-200">
+        <select
+            id={id}
+            name={name}
+            className={`${selectClasses} ${className || ''}`}
+            {...props}
+        >
             {children}
         </select>
-    )
+    );
 }
