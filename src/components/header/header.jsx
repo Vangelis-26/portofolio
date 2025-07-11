@@ -14,7 +14,7 @@ export default function Header() {
         priority
       />
 
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="p-4">

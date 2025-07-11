@@ -1,20 +1,56 @@
+import Cv from "@/components/cv/cv";
+import { FaUsers, FaTasks, FaHandshake } from "react-icons/fa";
+
+const strengths = [
+    {
+        icon: <FaUsers />,
+        title: "Expérience Client & Commerciale",
+        description: "Plus de quinze ans au cœur de secteurs dynamiques m'ont permis de cultiver un sens aigu de la relation client, de la gestion d'actions commerciales au déploiement de projets d'envergure.",
+    },
+    {
+        icon: <FaTasks />,
+        title: "Pilotage & Coordination",
+        description: "Ma capacité à piloter des affaires complexes, optimiser des plannings et coordonner des équipes est un atout majeur pour garantir le succès et le respect des délais de chaque projet web.",
+    },
+    {
+        icon: <FaHandshake />,
+        title: "Pont entre Technique et Stratégie",
+        description: "Je traduis avec finesse les besoins d'un client en spécifications fonctionnelles claires. Mon ambition est d'allier la rigueur du code à une compréhension profonde des enjeux humains et commerciaux.",
+    }
+];
+
 export default function Intro() {
     return (
-        <main className="flex flex-col items-center justify-center py-8">
-            <section className="mb-8 px-100 text-justify">
-                <p className="m-8 ">Avec plus de quinze ans d'expérience au cœur de secteurs dynamiques, mon orientation vers le développement web est une suite logique, motivée par le désir de construire les solutions de demain. Mon parcours m'a permis de cultiver un sens aigu de la relation client et du commerce, que ce soit en conseillant des clients, en gérant des actions commerciales ou en assurant le déploiement de projets d'envergure.
-                </p>
-                <p className="m-8">
-                    Ce qui me distingue d'un profil purement technique, c'est ma capacité éprouvée à piloter des affaires complexes et à interagir avec un large éventail d'interlocuteurs, des particuliers aux professionnels et aux collectivités. En tant que chargé d'affaires et programmateur, j'ai excellé dans la gestion simultanée de nombreux dossiers, l'optimisation des plannings et la coordination d'équipes, garantissant ainsi le succès des opérations.
-                </p>
-                <p className="m-8">
-                    Cette vision globale et cette aisance relationnelle sont des atouts précieux dans le développement web. Elles me permettent de traduire avec finesse les besoins d'un client en spécifications fonctionnelles claires, d'assurer une communication fluide tout au long du projet et de concevoir des applications qui ne sont pas seulement performantes, mais qui répondent véritablement à une stratégie et à des objectifs utilisateurs. Mon ambition est d'allier la rigueur du code à une compréhension profonde des enjeux humains et commerciaux.
+        <main className="container mx-auto px-4 py-20 text-center">
+
+            <section>
+                <h1 className="text-4xl md:text-5xl font-bold">
+                    Développeur Web avec une vision 360°
+                </h1>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+                    J'allie une solide expérience en gestion de projet et relation client à une expertise technique pour créer des applications web qui ont un réel impact commercial.
                 </p>
             </section>
 
-            <a href="/about" className="bg-stone-700 text-white px-6 py-2 rounded hover:bg-stone-600 transition-colors">
-                Télécharger mon CV
-            </a>
+            <section className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+                {strengths.map((strength) => (
+                    <div
+                        key={strength.title}
+                        className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg text-left"
+                    >
+                        <div className="text-[--color-border] text-3xl mb-4">
+                            {strength.icon}
+                        </div>
+                        <h3 className="text-xl font-bold">{strength.title}</h3>
+                        <p className="mt-2 text-slate-400">{strength.description}</p>
+                    </div>
+                ))}
+            </section>
+
+            <section className="mt-20">
+                <Cv />
+            </section>
+
         </main>
-    )
+    );
 }
