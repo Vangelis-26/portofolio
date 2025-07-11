@@ -36,7 +36,7 @@ export default function Intro() {
                 {strengths.map((strength) => (
                     <div
                         key={strength.title}
-                        className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg text-left"
+                        className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg text-left transform transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:border-[--color-border]/50"
                     >
                         <div className="text-[--color-border] text-3xl mb-4">
                             {strength.icon}

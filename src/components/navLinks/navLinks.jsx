@@ -1,43 +1,33 @@
-"use client";
+import Link from 'next/link';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+export default function NavLinks({ className }) {
+    const links = [
+        { href: "/", label: "Accueil" },
+        { href: "/parcours", label: "Parcours" },
+        { href: "/projets", label: "Projets" },
+        { href: "/competences", label: "Compétences" },
+        { href: "/contact", label: "Contact" },
+    ];
 
-import "@/app/globals.css";
-
-export default function NavLinks() {
-
-    const pathname = usePathname();
+    const finalClasses = `flex items-center gap-4 text-sm font-bold ${className || ''}`;
 
     return (
-        <nav>
-            <ul className="flex justify-end gap-4 px-2">
-                <li>
-                    <Link href="/" className={pathname === "/" ? "active" : ""}>
-                        Accueil
+        <ul className={finalClasses}>
+            {links.map((link) => (
+                <li key={link.href}>
+                    <Link
+                        href={link.href}
+                        className="
+              relative inline-block px-3 py-2
+              text-slate-200 drop-shadow-sm
+              transform transition-all duration-300 ease-in-out
+              hover:bg-[--color-border]/10 hover:text-white hover:-translate-y-0.5 rounded-md
+            "
+                    >
+                        {link.label}
                     </Link>
                 </li>
-                <li>
-                    <Link href="/career" className={pathname === "/career" ? "active" : ""}>
-                        Parcours
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/projects" className={pathname === "/projects" ? "active" : ""}>
-                        Projets
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/skills" className={pathname === "/skills" ? "active" : ""}>
-                        Compétences
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/contact" className={pathname === "/contact" ? "active" : ""}>
-                        Contact
-                    </Link>
-                </li>
-            </ul>
-        </nav>
-    )
+            ))}
+        </ul>
+    );
 }
