@@ -21,9 +21,9 @@ const strengths = [
 
 export default function Intro() {
     return (
-        <main className="container mx-auto px-4 py-20 text-center">
+        <main className="container mx-auto flex flex-col items-center px-4 py-20">
 
-            <section>
+            <section className="text-center">
                 <h1 className="text-4xl md:text-5xl font-bold">
                     Développeur Web avec une vision 360°
                 </h1>
@@ -32,7 +32,7 @@ export default function Intro() {
                 </p>
             </section>
 
-            <section className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <section className="mt-20 w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
                 {strengths.map((strength) => (
                     <div
                         key={strength.title}
@@ -47,9 +47,9 @@ export default function Intro() {
                 ))}
             </section>
 
-            <section className="mt-20">
+            <div className="mt-20">
                 <Cv />
-            </section>
+            </div>
 
         </main>
     );
