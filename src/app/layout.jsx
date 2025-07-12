@@ -1,4 +1,6 @@
 import { Inter } from "next/font/google";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,7 +35,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`${inter.className} bg-(--color-background) text-white min-h-screen flex flex-col`}>
-        {children}
+
+        <Header />
+
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        <Footer />
+
       </body>
     </html>
   );

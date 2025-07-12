@@ -61,8 +61,7 @@ export default function Form() {
 
     return (
         <>
-            <Header />
-            <main className='flex flex-col items-center justify-center flex-grow py-16 px-4'>
+            <div className='flex flex-col items-center justify-center flex-grow py-16 px-4'>
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold">Entrons en contact</h1>
                     <p className="text-slate-400 mt-2">Un projet, une question ou une opportunité ? Écrivez-moi.</p>
@@ -146,8 +145,7 @@ export default function Form() {
                     {formStatus === 'success' && <p className="mt-4 text-center text-green-400">Merci ! Votre message a bien été envoyé.</p>}
                     {formStatus === 'error' && <p className="mt-4 text-center text-red-500">Une erreur est survenue. Veuillez réessayer.</p>}
                 </form>
-            </main>
-            <Footer />
+            </div>
         </>
     );
 }

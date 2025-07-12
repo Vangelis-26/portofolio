@@ -7,8 +7,7 @@ import Cv from "@/components/cv/cv";
 export default function About() {
     return (
         <>
-            <Header />
-            <main className="relative flex-grow flex flex-col items-center py-16 px-4">
+            <div className="relative flex-grow flex flex-col items-center py-16 px-4">
 
                 <section className="text-center mb-16">
                     <h1 className="text-4xl font-bold">Mon Parcours</h1>
@@ -31,8 +30,7 @@ export default function About() {
                     </div>
                 </div>
 
-            </main>
-            <Footer />
+            </div>
         </>
     );
 }

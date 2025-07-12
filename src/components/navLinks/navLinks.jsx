@@ -3,8 +3,8 @@ import Link from 'next/link';
 export default function NavLinks({ className }) {
     const links = [
         { href: "/", label: "Accueil" },
-        { href: "/parcours", label: "Parcours" },
-        { href: "/projets", label: "Projets" },
+        { href: "/career", label: "Parcours" },
+        { href: "/projects", label: "Projets" },
         { href: "/competences", label: "Compétences" },
         { href: "/contact", label: "Contact" },
     ];
