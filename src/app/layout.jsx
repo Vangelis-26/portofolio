@@ -2,7 +2,9 @@ import { Inter } from "next/font/google";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import FloatingButton from "@/components/floatingButton/floatingButton";
+import FloatingButtonsWrapper from "@/components/floattingButtonWrapper/floattingButtonWrapper";
 import "./globals.css";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,6 +52,8 @@ export default function RootLayout({ children }) {
         </div>
 
         <Footer />
+
+        <FloatingButtonsWrapper />
 
       </body>
     </html>
