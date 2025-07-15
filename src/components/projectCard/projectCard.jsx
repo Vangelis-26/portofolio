@@ -5,8 +5,7 @@ import TagIcon from '@/components/tagIcons/tagIcons';
 
 export default function ProjectCard({ type, title, description, image, tags, duration, links }) {
     return (
-        <div className="relative group flex flex-col bg-slate-900/50 border border-slate-800 rounded-lg h-full transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-[--color-border]/20">
-
+        <div className="relative group flex flex-col bg-slate-900/50 border border-slate-800 rounded-lg h-fulltransform transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:border-transparenthover:ring-2 hover:ring-(--color-border)">
             <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <a href={links.live || links.github || '#'} target="_blank" rel="noopener noreferrer" aria-label={`Voir le projet ${title}`}>
                     <Image
