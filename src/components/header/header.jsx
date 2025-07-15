@@ -1,18 +1,38 @@
 "use client";
 
-import { useState } from 'react';
-import NavLinks from "../navLinks/navLinks";
+import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import Cv from '../cv/cv';
+import NavLinks from "../navLinks/navLinks";
 import "../../app/globals.css";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
-      <header className="relative w-full h-64 md:h-80">
+      <header className="relative w-full h-64 md:h-80 text-white">
         <Image
           src="/banniere.webp"
           alt="Bannière de la page d'accueil"
@@ -24,15 +44,13 @@ export default function Header() {
 
         <div className="relative z-20 p-4 md:p-6">
           <nav className="flex justify-between items-center">
-            <div>
-              <Link
-                href="/"
-                aria-label="Retour à l'accueil"
-                className="fixed top-8 left-8 z-50 h-12 w-12 flex items-center justify-center rounded-full bg-slate-900/80 backdrop-blur-sm border border-slate-700 font-bold text-lg hover:border-(--color-border) transition-colors duration-300"
-              >
-                MM
-              </Link>
-            </div>
+            <Link
+              href="/"
+              aria-label="Retour à l'accueil"
+              className="font-bold text-xl hover:text-(--color-border) transition-colors"
+            >
+              MM
+            </Link>
 
             <div className="hidden md:block">
               <NavLinks className="flex" />
@@ -61,17 +79,27 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-50 p-6 bg-slate-950/95 backdrop-blur-sm transition-opacity duration-300 ease-in-out
-          ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+        ref={menuRef}
+        className={`
+          fixed top-0 left-0 right-0 z-50 p-6 shadow-lg
+          bg-slate-950/95 backdrop-blur-sm 
+          transform transition-transform duration-300 ease-in-out
+          ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}
         `}
       >
-        <div className="flex justify-end mb-8">
+        <div className="flex justify-end mb-4">
           <button onClick={() => setIsMenuOpen(false)} aria-label="Fermer le menu">
             <FiX size={32} />
           </button>
         </div>
-        <div className="flex flex-col items-center justify-center h-full -mt-20">
-          <NavLinks className="flex-col text-3xl gap-8" />
+        <div className="flex flex-col items-center justify-center">
+
+          <NavLinks className="flex-col text-2xl gap-8" onLinkClick={handleLinkClick} />
+
+          <div className="mt-8 border-t border-slate-700 w-full pt-6 flex justify-center">
+            <Cv className="bg-(--color-border) text-white border-transparent hover:opacity-90" />
+          </div>
+
         </div>
       </div>
     </>

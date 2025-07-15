@@ -1,22 +1,21 @@
-import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import NavLinks from "../navLinks/navLinks";
 import "../../app/globals.css";
 
 export default function Footer() {
     return (
-        <footer className="w-full border-t border-slate-800 text-slate-400 mt-20">
+        <footer id="page-footer" className="w-full border-t border-slate-800 text-slate-400 mt-20">
             <div className="container mx-auto px-4 py-8">
 
                 <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
 
                     <div className="md:flex-1">
-                        <h3 className="font-bold text-lg">Mourier Matthieu</h3>
+                        <h3 className="font-bold text-lg text-white">Mourier Matthieu</h3>
                         <p className="text-sm mt-1">Développeur web passionné par les solutions modernes.</p>
                     </div>
 
                     <div className="md:flex-1 flex justify-center">
-                        <NavLinks className="flex" />
+                        <NavLinks className="flex-col md:flex-row" />
                     </div>
 
                     <div className="md:flex-1 flex justify-center md:justify-end">

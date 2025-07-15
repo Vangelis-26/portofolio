@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { FiArrowUp } from 'react-icons/fi';
-import Cv from "@/components/cv/cv";
+import Cv from '../cv/cv';
 
 export default function FloatingButtons() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -14,9 +14,9 @@ export default function FloatingButtons() {
     useEffect(() => {
         const toggleVisibility = () => {
             if (window.scrollY > 300) {
-                setIsVisible(true);
+                setIsScrollButtonVisible(true);
             } else {
-                setIsVisible(false);
+                setIsScrollButtonVisible(false);
             }
         };
         window.addEventListener('scroll', toggleVisibility);
@@ -24,24 +24,26 @@ export default function FloatingButtons() {
     }, []);
 
     return (
-        <div
-            className={`fixed bottom-8 right-8 z-50 transition-opacity duration-300
-        ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-      `}
-        >
-            <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
 
-                <Cv className="bg-(--color-border)border-transparent hover:opacity-90" />
-
-                <button
-                    onClick={scrollToTop}
-                    className="flex items-center justify-center h-12 w-12 rounded-full shadow-lg bg-slate-800/80 backdrop-blur-sm border border-slate-700 transform transition-all duration-300 hover:scale-110 hover:border-(--color-border)"
-                    aria-label="Retourner en haut de la page"
-                >
-                    <FiArrowUp size={24} />
-                </button>
-
+            <div className="hidden md:block">
+                <Cv />
             </div>
+
+            <button
+                onClick={scrollToTop}
+                className={`
+          flex items-center justify-center h-12 w-12 rounded-full p-3 shadow-lg 
+          bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white
+          transform transition-all duration-300
+          hover:scale-110 hover:border-(--color-border)
+          ${isScrollButtonVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0 pointer-events-none'}
+        `}
+                aria-label="Retourner en haut de la page"
+            >
+                <FiArrowUp size={24} />
+            </button>
+
         </div>
     );
 }

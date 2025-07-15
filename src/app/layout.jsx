@@ -43,9 +43,13 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <Footer />
+        <div className="sticky bottom-8 z-40 w-full flex justify-end pr-8 pointer-events-none">
+          <div className="hidden md:block">
+            <FloatingButton />
+          </div>
+        </div>
 
-        <FloatingButton />
+        <Footer />
 
       </body>
     </html>
