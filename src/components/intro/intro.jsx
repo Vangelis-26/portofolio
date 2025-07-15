@@ -1,4 +1,3 @@
-import Cv from "@/components/cv/cv";
 import { FaUsers, FaTasks, FaHandshake } from "react-icons/fa";
 
 const strengths = [
@@ -46,10 +45,6 @@ export default function Intro() {
                     </div>
                 ))}
             </section>
-
-            <div className="mt-20">
-                <Cv />
-            </div>
 
         </main>
     );

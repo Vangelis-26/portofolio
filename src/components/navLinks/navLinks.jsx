@@ -9,7 +9,7 @@ export default function NavLinks({ className }) {
         { href: "/contact", label: "Contact" },
     ];
 
-    const finalClasses = `flex items-center gap-4 text-sm font-bold ${className || ''}`;
+    const finalClasses = `items-center gap-4 text-sm font-bold ${className || ''}`;
 
     return (
         <ul className={finalClasses}>
@@ -17,12 +17,7 @@ export default function NavLinks({ className }) {
                 <li key={link.href}>
                     <Link
                         href={link.href}
-                        className="
-              relative inline-block px-3 py-2
-              text-slate-200 drop-shadow-sm
-              transform transition-all duration-300 ease-in-out
-              hover:bg-[--color-border]/10 hover:text-white hover:-translate-y-0.5 rounded-md
-            "
+                        className="relative inline-block px-3 py-2 text-slate-200 drop-shadow-sm transform transition-all duration-300 ease-in-out hover:bg-(--color-border)/10 hover:text-white hover:-translate-y-0.5 rounded-md"
                     >
                         {link.label}
                     </Link>

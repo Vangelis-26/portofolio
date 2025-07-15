@@ -24,12 +24,6 @@ export default function About() {
                     <Experiences />
                 </div>
 
-                <div className="sticky bottom-8 w-full flex justify-end pr-8 z-40 pointer-events-none">
-                    <div className="pointer-events-auto">
-                        <Cv />
-                    </div>
-                </div>
-
             </div>
         </>
     );
