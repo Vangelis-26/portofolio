@@ -1,8 +1,5 @@
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import Formations from "@/components/formations/formations";
 import Experiences from "@/components/experiences/experiences";
-import Cv from "@/components/cv/cv";
 
 export default function About() {
     return (

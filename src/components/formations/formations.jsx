@@ -1,10 +1,10 @@
-import Timeline from '@/components/timeline/timeline'; // On importe le composant réutilisable
+import Timeline from '@/components/timeline/timeline';
 
 const formationsData = [
     {
         date: "2006 – 2008",
-        title: "Académie de l'entreprise", // On renomme 'school' en 'title'
-        subtitle: "BTS Management des Unités Commerciales (MUC)", // On renomme 'degree' en 'subtitle'
+        title: "Académie de l'entreprise",
+        subtitle: "BTS Management des Unités Commerciales (MUC)",
         link: "https://www.formation-et-cours.com/academie-de-l-entreprise-valence-drome/",
     },
     {

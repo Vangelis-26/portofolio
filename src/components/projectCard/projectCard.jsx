@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
+import TagIcon from '@/components/tagIcons/tagIcons';
 
 export default function ProjectCard({ type, title, description, image, tags, duration, links }) {
     return (
-        <div className="group flex flex-col bg-slate-900/50 border border-slate-800 rounded-lg transform transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-[--color-border]/20">
+        <div className="relative group flex flex-col bg-slate-900/50 border border-slate-800 rounded-lg h-full transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-[--color-border]/20">
 
             <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <a href={links.live || links.github || '#'} target="_blank" rel="noopener noreferrer" aria-label={`Voir le projet ${title}`}>
@@ -24,11 +24,21 @@ export default function ProjectCard({ type, title, description, image, tags, dur
                     <span className="bg-slate-800 border border-slate-700 px-2 py-0.5 rounded-md">{type}</span>
                     {duration && <span className="flex items-center gap-1"><FiClock />{duration}</span>}
                 </div>
+
                 <h3 className="text-xl font-bold text-white">{title}</h3>
                 <p className="mt-2 text-slate-400 text-sm flex-grow">{description}</p>
+
                 <div className="mt-4 flex flex-wrap gap-2">
                     {tags.map((tag) => (
-                        <span key={tag} className="text-xs bg-slate-800 border border-slate-700 text-[--color-border] font-medium px-3 py-1 rounded-full">
+                        <span
+                            key={tag}
+                            className="
+                flex items-center justify-center gap-2
+                text-xs font-medium px-3 py-1 rounded-full
+                bg-slate-800 border border-slate-700 text-slate-300
+              "
+                        >
+                            <TagIcon tagName={tag} />
                             {tag}
                         </span>
                     ))}

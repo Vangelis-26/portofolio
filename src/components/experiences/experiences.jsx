@@ -1,6 +1,6 @@
 import Timeline from '@/components/timeline/timeline';
 
-const linkStyles = "font-semibold hover:text-[--color-border] transition-colors";
+const linkStyles = "font-semibold hover:text-(--color-border) transition-colors";
 
 const experiencesData = [
     {

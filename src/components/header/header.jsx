@@ -61,10 +61,7 @@ export default function Header() {
       </header>
 
       <div
-        className={`
-          fixed inset-0 z-50 p-6
-          bg-slate-950/95 backdrop-blur-sm
-          transition-opacity duration-300 ease-in-out
+        className={`fixed inset-0 z-50 p-6 bg-slate-950/95 backdrop-blur-sm transition-opacity duration-300 ease-in-out
           ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
         `}
       >
