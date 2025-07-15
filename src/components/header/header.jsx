@@ -47,9 +47,14 @@ export default function Header() {
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              className="font-bold text-xl hover:text-(--color-border) transition-colors"
+              className="relative block h-16 w-40 md:h-20 md:w-48 transition-transform duration-300 hover:scale-105"
             >
-              MM
+              <Image
+                src="/logo.webp"
+                alt="Logo Mourier Matthieu"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
             </Link>
 
             <div className="hidden md:block">
