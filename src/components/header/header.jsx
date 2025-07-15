@@ -47,7 +47,7 @@ export default function Header() {
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              className="relative block h-16 w-40 md:h-20 md:w-48 transition-transform duration-300 hover:scale-105"
+              className="relative block h-32 w-40 md:h-20 md:w-48 transition-transform duration-300 hover:scale-105"
             >
               <Image
                 src="/logo.webp"

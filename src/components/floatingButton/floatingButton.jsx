@@ -5,18 +5,14 @@ import { FiArrowUp } from 'react-icons/fi';
 import Cv from '../cv/cv';
 
 export default function FloatingButtons() {
-    const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false);
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const toggleVisibility = () => {
             if (window.scrollY > 300) {
-                setIsScrollButtonVisible(true);
+                setIsVisible(true);
             } else {
-                setIsScrollButtonVisible(false);
+                setIsVisible(false);
             }
         };
         window.addEventListener('scroll', toggleVisibility);
@@ -24,26 +20,22 @@ export default function FloatingButtons() {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row items-center gap-4">
-
-            <div className="hidden md:block">
+        <div
+            className={`
+        transition-opacity duration-300 ease-in-out
+        ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+      `}
+        >
+            <div className="flex flex-col md:flex-row items-center gap-4">
                 <Cv />
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="flex items-center justify-center h-12 w-12 rounded-full p-3 shadow-lg bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white transform transition-transform duration-300 hover:scale-110 hover:border-([)--color-border)"
+                    aria-label="Retourner en haut de la page"
+                >
+                    <FiArrowUp size={24} />
+                </button>
             </div>
-
-            <button
-                onClick={scrollToTop}
-                className={`
-          flex items-center justify-center h-12 w-12 rounded-full p-3 shadow-lg 
-          bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white
-          transform transition-all duration-300
-          hover:scale-110 hover:border-(--color-border)
-          ${isScrollButtonVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0 pointer-events-none'}
-        `}
-                aria-label="Retourner en haut de la page"
-            >
-                <FiArrowUp size={24} />
-            </button>
-
         </div>
     );
 }
