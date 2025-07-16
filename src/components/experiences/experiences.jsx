@@ -9,7 +9,7 @@ const experiencesData = [
         company: "Axione",
         location: "Montélimar - France",
         companyLink: "https://www.axione.fr/",
-        description: "Pilotage du déploiement de la fibre optique sur le secteur Drôme-Ardèche. J'ai agi comme interface clé entre les équipes techniques, les collectivités (Mairies, communautés de communes) et les clients finaux (particuliers, professionnels). Mes missions incluaient la gestion complète du processus de conventionnement et la résolution des problématiques liées au raccordement.",
+        description: "En tant qu'interface clé du déploiement de la fibre, j'ai coordonné les relations entre les équipes techniques, les collectivités et les clients. J'ai développé une expertise dans la gestion de projet complexe et la résolution de problématiques techniques et contractuelles pour assurer la réussite des raccordements.",
     },
     {
         date: "2020",
@@ -17,8 +17,7 @@ const experiencesData = [
         company: "Domobat",
         location: "Montélimar - France",
         companyLink: "http://www.domobat-expertises.fr/",
-        description: "Gestion du cycle de vie des projets clients, de la réception de la demande à la validation technique. J'étais responsable de l'analyse des besoins, de l'élaboration des devis pour les travaux de carottage (y compris l'analyse Amiante/HAP) et de la coordination des démarches administratives réglementaires (DICT, permissions de voirie).",
-
+        description: "J'ai géré l'intégralité du cycle de vie des projets clients, depuis l'analyse technique des besoins jusqu'à la coordination des démarches réglementaires (DICT, permissions de voirie). Ce rôle m'a permis d'aiguiser ma capacité à traduire des exigences complexes en plans d'action concrets.",
     },
     {
         date: "2018 – 2019",
@@ -26,7 +25,7 @@ const experiencesData = [
         company: "Enedis",
         location: "Montélimar - France",
         companyLink: "https://www.enedis.fr/",
-        description: "Optimisation et planification logistique des tournées des techniciens sur la région Drôme/Ardèche Sud. En m'appuyant sur les bases de données opérationnelles, j'ai coordonné les interventions pour maximiser l'efficacité. J'ai également assuré le suivi des impayés fournisseurs et la résolution des litiges."
+        description: "Responsable de l'optimisation logistique des tournées de techniciens via l'analyse de données opérationnelles. J'ai mis en place des plannings pour maximiser l'efficacité des interventions, tout en gérant la résolution de litiges et le suivi des paiements fournisseurs.",
     },
     {
         date: "2017",
@@ -34,14 +33,14 @@ const experiencesData = [
         company: "C'Pro",
         location: "Valence - France",
         companyLink: "https://koesio.com/",
-        description: "Diagnostic et résolution de pannes informatiques pour des clients professionnels. J'assurais un support technique complet par prise de main à distance, garantissant une restauration rapide du service",
+        description: "Spécialisé dans le diagnostic et la résolution de pannes informatiques à distance. Cette expérience a renforcé ma capacité à débugger des problèmes techniques sous pression et à communiquer des solutions claires à des utilisateurs non-techniques.",
     },
     {
         date: "2016",
         title: "Responsable de Magasin",
         company: "SIMAC",
         location: "Montélimar - France",
-        description: "En tant que responsable de point de vente, j'ai piloté l'ensemble des opérations financières, commerciales et logistiques. Mes missions allaient du suivi des commandes fournisseurs à la facturation et la résolution des litiges clients, en passant par la gestion de la caisse et la responsabilité complète des ouvertures et fermetures du magasin.",
+        description: "En tant que pilote du point de vente, j'ai assuré une gestion 360° : financière (caisse, trésorerie), logistique (commandes, stocks), et commerciale (devis, facturation, litiges). Une expérience clé dans la compréhension des enjeux globaux d'une entreprise.",
     },
     {
         date: "2013 – 2015",
@@ -49,24 +48,17 @@ const experiencesData = [
         company: "EDF",
         location: "Montélimar - France",
         companyLink: "https://www.edf.fr/",
-        description: "J'étais en charge de la gestion complète du magasin : caisse, commandes fournisseurs, litiges clients, réception de marchandises, et établissement des devis et factures.",
+        description: "Au sein d'une plateforme téléphonique, j'ai animé un pôle projet pour l'équipe tout en gérant la relation client. Ma mission était de vulgariser des informations complexes (facturation, taxes) et d'élaborer des solutions sur mesure comme des plans de paiement, tout en assurant la gestion sécurisée des données sensibles et des transactions.",
     },
     {
         date: "2008 – 2013",
         title: "Vendeur",
-        company: (
-            <>
-                <a href="https://www.orange.fr/" target="_blank" rel="noreferrer" className={linkStyles}>
-                    Orange
-                </a>
-                <span className="text-slate-300"> / </span>
-                <a href="https://www.sfr.fr/" target="_blank" rel="noreferrer" className={linkStyles}>
-                    SFR
-                </a>
-            </>
-        ),
         location: "Montélimar - France",
-        description: "Mes missions incluaient le conseil client en téléphonie mobile, la mise en place d'actions commerciales et la gestion de la surface de vente et de la caisse.",
+        description: "Conseil technique et commercial en téléphonie mobile. Ma mission était de traduire les besoins des clients en solutions produits adaptées et de participer activement à la gestion des actions commerciales.",
+        companies: [
+            { name: "Orange", link: "https://www.orange.fr/" },
+            { name: "SFR", link: "https://www.sfr.fr/" }
+        ]
     },
 ];
 
