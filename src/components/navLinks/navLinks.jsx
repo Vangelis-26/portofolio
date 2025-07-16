@@ -1,9 +1,9 @@
 "use client";
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // On importe le hook
+import { usePathname } from 'next/navigation';
 
-export default function NavLinks({ className, onLinkClick, isMenuOpen }) {
+export default function NavLinks({ className, onLinkClick, isMenuOpen, variant = 'header' }) {
     const links = [
         { href: "/", label: "Accueil" },
         { href: "/career", label: "Parcours" },
@@ -11,14 +11,20 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen }) {
         { href: "/skills", label: "Compétences" },
         { href: "/contact", label: "Contact" },
     ];
-
     const pathname = usePathname();
 
+    const baseLinkStyle = "py-2 transition-colors duration-300";
+
+    const headerLinkStyle = `
+        relative after:absolute after:left-0 after:bottom-0 after:h-[2px] 
+        after:w-full after:bg-(--color-border) after:origin-center 
+        after:transition-transform after:duration-300
+    `;
+
     return (
-        <ul className={`flex items-center gap-4 text-sm font-bold ${className || ''}`}>
+        <ul className={`flex items-center gap-6 text-base font-medium ${className || ''}`}>
             {links.map((link, index) => {
                 const isActive = pathname === link.href;
-
                 return (
                     <li
                         key={link.href}
@@ -29,13 +35,12 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen }) {
                             href={link.href}
                             onClick={onLinkClick}
                             className={`
-                                relative inline-block px-4 py-2
-                                transition-all duration-300 ease-in-out
-                                rounded-full
-                                ${isActive
-                                    ? 'bg-(--color-border)/80 text-white'
-                                    : 'text-slate-300 hover:text-white'
-                                }
+                                ${baseLinkStyle}
+                                ${variant === 'header' ? headerLinkStyle : ''}
+                                ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}
+                                ${variant === 'header' && !isActive ? 'after:scale-x-0' : ''}
+                                ${variant === 'header' && isActive ? 'after:scale-x-100' : ''}
+                                ${variant === 'header' ? 'hover:after:scale-x-100' : ''}
                             `}
                         >
                             {link.label}

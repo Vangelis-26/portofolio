@@ -3,13 +3,56 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from "react-icons/fi";
 import Cv from '../cv/cv';
-import NavLinks from "../navLinks/navLinks";
 import "../../app/globals.css";
+
+function NavLinks({ className, onLinkClick, isMenuOpen }) {
+  const links = [
+    { href: "/", label: "Accueil" },
+    { href: "/career", label: "Parcours" },
+    { href: "/projects", label: "Projets" },
+    { href: "/skills", label: "Compétences" },
+    { href: "/contact", label: "Contact" },
+  ];
+  const pathname = usePathname();
+
+  return (
+    <ul className={`flex items-center gap-6 text-base font-medium ${className || ''}`}>
+      {links.map((link, index) => {
+        const isActive = pathname === link.href;
+        return (
+          <li
+            key={link.href}
+            className={isMenuOpen ? 'animate-fade-in-up' : ''}
+            style={{ animationDelay: isMenuOpen ? `${index * 100}ms` : '0ms' }}
+          >
+            <Link
+              href={link.href}
+              onClick={onLinkClick}
+              className={`
+                                relative py-2 transition-colors duration-300
+                                ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}
+                                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full 
+                                after:bg-(--color-border) after:origin-center after:transition-transform after:duration-300
+                                ${isActive ? 'after:scale-x-100' : 'after:scale-x-0'}
+                                hover:after:scale-x-100
+                            `}
+            >
+              {link.label}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavScrolled, setIsNavScrolled] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -26,28 +69,35 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsNavScrolled(true);
+      } else {
+        setIsNavScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
   return (
     <>
-      <header className="relative w-full h-64 md:h-80 text-white">
-        <Image
-          src="/banniere.webp"
-          alt="Bannière de la page d'accueil"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50"></div>
-
-        <div className="relative z-20 p-4 md:p-6">
-          <nav className="flex justify-between items-center">
+      <div className={`
+        w-full sticky top-0 z-30 transition-all duration-300
+        ${isNavScrolled ? 'bg-(--color-background)/80 backdrop-blur-sm border-b border-slate-800' : 'bg-transparent border-b border-transparent'}
+      `}>
+        <div className="px-6 md:px-10">
+          <nav className="flex justify-between items-center py-4">
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              className="relative block h-10 w-12 md:h-16 md:w-20 transition-transform duration-300 hover:scale-105"
+              className="relative block h-12 w-28 transition-transform duration-300 hover:scale-105"
             >
               <Image
                 src="/logo.webp"
@@ -70,34 +120,47 @@ export default function Header() {
             </button>
           </nav>
         </div>
+      </div>
 
-        <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-4">
-          <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-md">
-              Mourier Matthieu
-            </h1>
-            <p className="mt-3 text-base uppercase tracking-widest text-slate-300 drop-shadow-sm" style={{ animationDelay: '200ms' }}>
-              Développeur Web <span className="bg-(--color-border) text-slate-900 font-bold px-3 py-1 rounded-md ml-1">FullStack</span>
-            </p>
+      <header className="relative w-full text-white overflow-hidden -mt-[96px]">
+        <div className="relative w-full h-[45vh] min-h-[400px]">
+          <Image
+            src="/banniere.webp"
+            alt="Bannière de la page d'accueil"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+            className="blur-[3px] scale-105"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
 
-            <div
-              className="mt-8 flex justify-center gap-4 animate-fade-in-up"
-              style={{ animationDelay: '400ms' }}
-            >
-              <Link
-                href="/projets"
-                className="px-6 py-3 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+            <div className="animate-fade-in-up">
+              <h1 className="mt-10 text-5xl md:text-7xl font-bold drop-shadow-lg">
+                Mourier Matthieu
+              </h1>
+              <p className="mt-4 text-lg md:text-xl font-semibold text-slate-300 drop-shadow-md" style={{ animationDelay: '200ms' }}>
+                Développeur Web FullStack
+              </p>
+
+              <div
+                className="mt-14 pt-4 flex flex-col sm:flex-row items-center justify-center gap-15 animate-fade-in-up"
+                style={{ animationDelay: '400ms' }}
               >
-                Découvrir mes projets
-              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-3 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
-              >
-                Me contacter
-              </Link>
+                <Link
+                  href="/projets"
+                  className="w-full sm:w-auto px-5 py-2 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
+                >
+                  Mes projets
+                </Link>
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto px-5 py-2 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
+                >
+                  Me contacter
+                </Link>
+              </div>
             </div>
-
           </div>
         </div>
       </header>
