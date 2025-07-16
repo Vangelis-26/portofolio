@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
-import FloatingButton from "@/components/floatingButton/floatingButton";
 import FloatingButtonsWrapper from "@/components/floattingButtonWrapper/floattingButtonWrapper";
 import "./globals.css";
 
@@ -46,14 +45,12 @@ export default function RootLayout({ children }) {
         </main>
 
         <div className="sticky bottom-8 z-40 w-full flex justify-end pr-8 pointer-events-none">
-          <div className="hidden md:block">
-            <FloatingButton />
+          <div className="hidden md:block pointer-events-auto">
+            <FloatingButtonsWrapper />
           </div>
         </div>
 
         <Footer />
-
-        <FloatingButtonsWrapper />
 
       </body>
     </html>

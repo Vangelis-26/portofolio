@@ -1,4 +1,5 @@
 import { FaUsers, FaTasks, FaHandshake } from "react-icons/fa";
+import Image from "next/image";
 
 const strengths = [
     {
@@ -23,6 +24,16 @@ export default function Intro() {
         <main className="container mx-auto flex flex-col items-center px-4 py-20">
 
             <section className="text-center">
+                <div className="flex justify-center mb-8 animate-fade-in-up">
+                    <Image
+                        src="/logo.webp"
+                        alt="Logo de Mourier Matthieu"
+                        width={256}
+                        height={256}
+                        priority
+                        className="h-24 w-24 md:h-32 md:w-32"
+                    />
+                </div>
                 <h1 className="text-4xl md:text-5xl font-bold">
                     Développeur Web avec une vision 360°
                 </h1>
