@@ -15,7 +15,7 @@ export default function Footer() {
                     </div>
 
                     <div className="md:flex-1 flex justify-center">
-                        <NavLinks className="flex-col md:flex-row" />
+                        <NavLinks className="flex-col gap-4 md:flex-row" />
                     </div>
 
                     <div className="md:flex-1 flex justify-center md:justify-end">

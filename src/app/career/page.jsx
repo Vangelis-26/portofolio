@@ -1,27 +1,33 @@
 import Formations from "@/components/formations/formations";
 import Experiences from "@/components/experiences/experiences";
+import FadeInScroll from '@/components/fadeInScroll/fadeInScroll';
 
-export default function About() {
+export default function CareerPage() {
     return (
-        <>
-            <div className="relative flex-grow flex flex-col items-center py-16 px-4">
+        <div className="container mx-auto px-4 py-16 md:py-24">
 
-                <section className="text-center mb-16">
-                    <h1 className="text-4xl font-bold">Mon Parcours</h1>
-                    <p className="text-slate-400 mt-2 max-w-2xl mx-auto">
+            <FadeInScroll>
+                <section className="text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold">Mon Parcours</h1>
+                    <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
                         De la gestion de projet à la programmation, découvrez le parcours qui a forgé ma double compétence, technique et commerciale.
                     </p>
                 </section>
+            </FadeInScroll>
 
-                <div className="w-full max-w-4xl">
-                    <Formations />
-                </div>
+            <div className="mt-16 space-y-16">
 
-                <div className="w-full max-w-4xl mt-16">
+                <FadeInScroll>
+                    <div className="w-full max-w-4xl mx-auto">
+                        <Formations />
+                    </div>
+                </FadeInScroll>
+                <div className="w-full max-w-4xl mx-auto">
                     <Experiences />
                 </div>
 
             </div>
-        </>
+
+        </div>
     );
 }

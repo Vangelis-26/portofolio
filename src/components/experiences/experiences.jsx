@@ -1,7 +1,5 @@
 import Timeline from '@/components/timeline/timeline';
 
-const linkStyles = "font-semibold hover:text-(--color-border) transition-colors";
-
 const experiencesData = [
     {
         date: "Depuis 2020",
@@ -65,7 +63,7 @@ const experiencesData = [
 export default function Experiences() {
     return (
         <div className="container mx-auto px-4 py-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Expériences Professionnelles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Expériences Professionnelles</h2>
             <Timeline items={experiencesData} />
         </div>
     );

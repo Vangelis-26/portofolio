@@ -11,11 +11,17 @@ export default function Timeline({ items }) {
                             {item.date}
                         </time>
                         <h3 className="text-xl font-bold mt-1">
-                            {item.title}
+                            {item.link ? (
+                                <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold hover:text-(--color-border) transition-colors group">
+                                    <span>{item.title}</span>
+                                    <FaGlobe className="text-slate-500 transition-colors group-hover:text-(--color-border)" size={16} />
+                                </a>
+                            ) : (
+                                item.title
+                            )}
                         </h3>
 
                         {item.subtitle && <p className="text-slate-300 mt-1">{item.subtitle}</p>}
-
 
                         {item.company && (
                             <p className="text-slate-300 mt-1">

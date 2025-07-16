@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from 'react';
-import Header from '@/components/header/header';
-import Footer from '@/components/footer/footer';
-import CustomSelect from '@/components/ui/customSelect';
-import Input from '@/components/ui/input';
+import { FaPaperPlane } from 'react-icons/fa';
+import CustomSelect from '@/components/customSelect/customSelect';
+import Input from '@/components/input/input';
+import FadeInScroll from '@/components/fadeInScroll/fadeInScroll';
 import '@/app/globals.css';
 
-export default function Form() {
+export default function ContactPage() {
     const [formData, setFormData] = useState({
         identity: '', lastname: '', firstname: '', society: '',
         reason: '', tel: '', mail: '', message: '',
@@ -60,14 +60,15 @@ export default function Form() {
     };
 
     return (
-        <>
-            <div className='flex flex-col items-center justify-center flex-grow py-16 px-4'>
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl font-bold">Entrons en contact</h1>
-                    <p className="text-slate-400 mt-2">Un projet, une question ou une opportunité ? Écrivez-moi.</p>
-                </div>
+        <div className='container mx-auto px-4 py-16'>
+            <FadeInScroll>
 
-                <form onSubmit={handleSubmit} noValidate className='bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl max-w-4xl w-full'>
+                <section className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold">Entrons en contact</h1>
+                    <p className="mt-4 text-lg text-slate-400">Un projet, une question ou une opportunité ? Écrivez-moi.</p>
+                </section>
+
+                <form onSubmit={handleSubmit} noValidate className='bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl max-w-4xl w-full mx-auto'>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
 
                         <div className="md:col-span-2">
@@ -117,26 +118,33 @@ export default function Form() {
 
                         <div className="md:col-span-2">
                             <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">Votre message</label>
-                            <textarea name="message" id="message" rows="5" placeholder="Bonjour, je vous contacte concernant..." className='bg-slate-800 border border-slate-700 rounded-md w-full p-2 focus:ring-2 focus:ring-[--color-border] focus:border-[--color-border] outline-none' value={formData.message} onChange={handleChange}></textarea>
+                            <textarea name="message" id="message" rows="5" placeholder="Bonjour, je vous contacte concernant..." className='bg-slate-800 border border-slate-700 rounded-md w-full p-2 focus:ring-2 focus:ring-(--color-border) focus:border-(--color-border) outline-none' value={formData.message} onChange={handleChange}></textarea>
                         </div>
 
                         <div className="md:col-span-2 flex justify-between items-center pt-1 flex-wrap gap-4">
-                            <label htmlFor="files" className='text-center block cursor-pointer text-xs border border-slate-700 px-4 py-2 hover:bg-slate-800 rounded-md truncate max-w-[150px]'>
+                            <label
+                                htmlFor="files"
+                                className="
+            cursor-pointer text-sm font-semibold px-8 py-3 rounded-md
+            border-2 border-slate-700 text-slate-300
+            transition-all duration-300
+            hover:border-(--color-border)/50 hover:bg-(--color-border)/10
+        "
+                            >
                                 {fileName ? fileName : "Ajouter un fichier"}
                             </label>
                             <input className='sr-only' type="file" name="files" id="files" onChange={handleFileChange} />
 
-                            <button type="submit" disabled={isSubmitting} className='cursor-pointer text-sm font-semibold bg-[--color-border] px-8 py-2 hover:opacity-90 transition-opacity rounded-md disabled:opacity-50 disabled:cursor-not-allowed min-w-[150px]'>
-                                {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                            <button type="submit" disabled={isSubmitting} className='flex items-center justify-center gap-2 cursor-pointer text-sm font-semibold bg-(--color-border) px-8 py-3 hover:opacity-90 transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed min-w-[180px] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-(--color-border)/30'>
+                                <span>{isSubmitting ? 'Envoi en cours...' : 'Envoyer'}</span>
+                                {!isSubmitting && <FaPaperPlane />}
                             </button>
                         </div>
 
                         <div className="md:col-span-2 text-xs text-slate-400">
                             <div className="flex items-start">
                                 <input type="checkbox" id="consent" name="consent" className='mr-2 mt-0.5' checked={formData.consent} onChange={handleChange} required />
-                                <label htmlFor="consent" className="cursor-pointer">
-                                    En cochant cette case, je consens à ce que mes données soient utilisées uniquement pour répondre à ma demande.
-                                </label>
+                                <label htmlFor="consent" className="cursor-pointer">En cochant cette case, je consens à ce que mes données soient utilisées uniquement pour répondre à ma demande.</label>
                             </div>
                             {errors.consent && <p className="text-red-500 text-xs mt-1">{errors.consent}</p>}
                         </div>
@@ -145,7 +153,7 @@ export default function Form() {
                     {formStatus === 'success' && <p className="mt-4 text-center text-green-400">Merci ! Votre message a bien été envoyé.</p>}
                     {formStatus === 'error' && <p className="mt-4 text-center text-red-500">Une erreur est survenue. Veuillez réessayer.</p>}
                 </form>
-            </div>
-        </>
+            </FadeInScroll>
+        </div>
     );
 }

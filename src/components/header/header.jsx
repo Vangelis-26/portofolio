@@ -47,7 +47,6 @@ export default function Header() {
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              // On définit une petite taille par défaut, et une plus grande pour les écrans md+
               className="relative block h-10 w-12 md:h-16 md:w-20 transition-transform duration-300 hover:scale-105"
             >
               <Image
@@ -72,14 +71,33 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-4 pointer-events-none">
+        <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-4">
           <div className="animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-md">
               Mourier Matthieu
             </h1>
             <p className="mt-3 text-base uppercase tracking-widest text-slate-300 drop-shadow-sm" style={{ animationDelay: '200ms' }}>
-              Développeur Web FullStack
+              Développeur Web <span className="bg-(--color-border) text-slate-900 font-bold px-3 py-1 rounded-md ml-1">FullStack</span>
             </p>
+
+            <div
+              className="mt-8 flex justify-center gap-4 animate-fade-in-up"
+              style={{ animationDelay: '400ms' }}
+            >
+              <Link
+                href="/projets"
+                className="px-6 py-3 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
+              >
+                Découvrir mes projets
+              </Link>
+              <Link
+                href="/contact"
+                className="px-6 py-3 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
+              >
+                Me contacter
+              </Link>
+            </div>
+
           </div>
         </div>
       </header>
@@ -99,13 +117,10 @@ export default function Header() {
           </button>
         </div>
         <div className="flex flex-col items-center justify-center">
-
           <NavLinks className="flex-col text-2xl gap-8" onLinkClick={handleLinkClick} />
-
           <div className="mt-8 border-t border-slate-700 w-full pt-6 flex justify-center">
             <Cv className="bg-(--color-border) text-white border-transparent hover:opacity-90" />
           </div>
-
         </div>
       </div>
     </>
