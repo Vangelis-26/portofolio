@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                 </section>
 
                 <section
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-32 animate-fade-in-up"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-32 md:animate-fade-in-up"
                     style={{ animationDelay: '200ms', animationFillMode: 'backwards' }}
                 >
                     {projectsData.map((project) => (

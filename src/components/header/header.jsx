@@ -151,13 +151,13 @@ export default function Header() {
               >
                 <Link
                   href="/projets"
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-(--color-border) text-white md:transform md:transition-transform md:hover:scale-105"
                 >
                   Mes projets
                 </Link>
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm md:transform md:transition-transform md:hover:scale-105"
                 >
                   Me contacter
                 </Link>
@@ -172,7 +172,7 @@ export default function Header() {
         className={`
           fixed top-0 left-0 right-0 z-50 p-6 shadow-lg
           bg-slate-950/95 backdrop-blur-sm 
-          transform transition-transform duration-300 ease-in-out
+          md:transform md:transition-transform md:duration-300 md:ease-in-out
           ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}
         `}
       >
@@ -184,7 +184,7 @@ export default function Header() {
         <div className="flex flex-col items-center justify-center">
           <NavLinks className="flex-col text-2xl gap-8" onLinkClick={handleLinkClick} />
           <div className="mt-8 border-t border-slate-700 w-full pt-6 flex justify-center">
-            <Cv className="bg-(--color-border) text-white border-transparent hover:opacity-90" />
+            <Cv className="bg-(--color-border) text-white border-transparent md:hover:opacity-90" />
           </div>
         </div>
       </div>

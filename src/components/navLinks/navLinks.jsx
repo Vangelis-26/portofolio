@@ -18,7 +18,7 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen, variant =
     const headerLinkStyle = `
         relative after:absolute after:left-0 after:bottom-0 after:h-[2px] 
         after:w-full after:bg-(--color-border) after:origin-center 
-        after:transition-transform after:duration-300
+        md:after:transition-transform after:duration-300
     `;
 
     return (
@@ -28,7 +28,7 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen, variant =
                 return (
                     <li
                         key={link.href}
-                        className={isMenuOpen ? 'animate-fade-in-up' : ''}
+                        className={isMenuOpen ? 'md:animate-fade-in-up' : ''}
                         style={{ animationDelay: isMenuOpen ? `${index * 100}ms` : '0ms' }}
                     >
                         <Link
@@ -37,10 +37,10 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen, variant =
                             className={`
                                 ${baseLinkStyle}
                                 ${variant === 'header' ? headerLinkStyle : ''}
-                                ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}
+                                ${isActive ? 'text-white' : 'text-slate-400 md:hover:text-white'}
                                 ${variant === 'header' && !isActive ? 'after:scale-x-0' : ''}
                                 ${variant === 'header' && isActive ? 'after:scale-x-100' : ''}
-                                ${variant === 'header' ? 'hover:after:scale-x-100' : ''}
+                                ${variant === 'header' ? 'md:hover:after:scale-x-100' : ''}
                             `}
                         >
                             {link.label}

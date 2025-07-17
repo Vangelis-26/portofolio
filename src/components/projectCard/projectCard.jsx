@@ -8,9 +8,9 @@ export default function ProjectCard({ type, title, description, image, tags, dur
     return (
         <div className="
             relative group flex flex-col bg-slate-900/50 border border-slate-800
-            rounded-lg h-full transform transition-all duration-300 ease-in-out
-            hover:scale-105 hover:-translate-y-1 hover:border-transparent
-            hover:ring-2 hover:ring-(--color-border)
+            rounded-lg h-full md:transform md:transition-all md:duration-300 md:ease-in-out
+            md:hover:scale-105 md:hover:-translate-y-1 md:hover:border-transparent
+            md:hover:ring-2 md:hover:ring-(--color-border)
         ">
             <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
@@ -19,7 +19,7 @@ export default function ProjectCard({ type, title, description, image, tags, dur
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-110"
+                    className="md:transition-transform md:duration-300 md:group-hover:scale-110"
                 />
             </div>
 
@@ -63,13 +63,13 @@ export default function ProjectCard({ type, title, description, image, tags, dur
             <div className="relative z-10 border-t border-slate-800 mt-4 p-4 flex justify-end gap-4 bg-slate-900/50 rounded-b-lg">
                 {links.github && links.github !== '#' && (
                     <a href={links.github} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+                        className="flex items-center gap-2 text-slate-400 md:hover:text-white md:transition-colors">
                         <FaGithub /><span>Code</span>
                     </a>
                 )}
                 {links.live && links.live !== '#' && (
                     <a href={links.live} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+                        className="flex items-center gap-2 text-slate-400 md:hover:text-white md:transition-colors">
                         <FaGlobe /><span>Live</span>
                     </a>
                 )}

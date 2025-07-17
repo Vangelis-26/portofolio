@@ -36,7 +36,7 @@ export default function CompetencesPage() {
                         <h2 className="text-3xl font-bold text-center mb-8">Mes Atouts Stratégiques</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {proSkills.map(skill => (
-                                <div key={skill.title} className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg flex items-start gap-4 h-full transform transition-all duration-300 ease-in-out hover:bg-slate-800 hover:-translate-y-1 hover:border-(--color-border)/50">
+                                <div key={skill.title} className="bg-slate-900/50 border border-slate-800 p-6 rounded-lg flex items-start gap-4 h-full md:transform md:transition-all md:duration-300 md:ease-in-out md:hover:bg-slate-800 md:hover:-translate-y-1 md:hover:border-(--color-border)/50">
                                     <div className="text-3xl text-(--color-border) mt-1">{skill.icon}</div>
                                     <div>
                                         <h4 className="font-bold text-lg text-white">{skill.title}</h4>
@@ -55,7 +55,7 @@ export default function CompetencesPage() {
                             {techSkills.map(skillName => (
                                 <div
                                     key={skillName}
-                                    className="w-36 h-36 flex flex-col items-center justify-center gap-3 p-4 rounded-lg bg-slate-800/50 border border-slate-700 transform transition-all duration-300 ease-in-out hover:bg-slate-800 hover:-translate-y-1 hover:border-(--color-border)/50"
+                                    className="w-36 h-36 flex flex-col items-center justify-center gap-3 p-4 rounded-lg bg-slate-800/50 border border-slate-700 md:transform md:transition-all md:duration-300 md:ease-in-out md:hover:bg-slate-800 md:hover:-translate-y-1 md:hover:border-(--color-border)/50"
                                 >
                                     <div className="text-4xl text-slate-200">
                                         <TagIcon tagName={skillName} />

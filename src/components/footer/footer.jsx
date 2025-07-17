@@ -16,10 +16,10 @@ export default function Footer() {
                     </div>
                     <div className="md:flex-1 flex justify-center md:justify-end">
                         <div className="flex gap-4">
-                            <a href="https://github.com/Vangelis-26" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-(--color-border) transition-colors">
+                            <a href="https://github.com/Vangelis-26" target="_blank" rel="noreferrer" aria-label="GitHub" className="md:hover:text-(--color-border) md:transition-colors">
                                 <FaGithub size={24} />
                             </a>
-                            <a href="https://www.linkedin.com/in/matthieu-mourier-77a5ba182/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-(--color-border) transition-colors">
+                            <a href="https://www.linkedin.com/in/matthieu-mourier-77a5ba182/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="md:hover:text-(--color-border) md:transition-colors">
                                 <FaLinkedin size={24} />
                             </a>
                         </div>

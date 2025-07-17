@@ -12,9 +12,9 @@ export default function Timeline({ items }) {
                         </time>
                         <h3 className="text-xl font-bold mt-1">
                             {item.link ? (
-                                <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold hover:text-(--color-border) transition-colors group">
+                                <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold md:hover:text-(--color-border) md:transition-colors group">
                                     <span>{item.title}</span>
-                                    <FaGlobe className="text-slate-500 transition-colors group-hover:text-(--color-border)" size={16} />
+                                    <FaGlobe className="text-slate-500 transition-colors md:group-hover:text-(--color-border)" size={16} />
                                 </a>
                             ) : (
                                 item.title
@@ -26,7 +26,7 @@ export default function Timeline({ items }) {
                         {item.company && (
                             <p className="text-slate-300 mt-1">
                                 {item.companyLink && item.companyLink !== '#' ? (
-                                    <a href={item.companyLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold hover:text-(--color-border) transition-colors group">
+                                    <a href={item.companyLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold md:hover:text-(--color-border) md:transition-colors group">
                                         <span>{item.company}</span>
                                         <FaGlobe className="text-slate-500 group-hover:text-(--color-border)" size={14} />
                                     </a>
@@ -41,7 +41,7 @@ export default function Timeline({ items }) {
                             <p className="text-slate-300 mt-1">
                                 {item.companies.map((comp, compIndex) => (
                                     <span key={comp.name}>
-                                        <a href={comp.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold hover:text-(--color-border) transition-colors group">
+                                        <a href={comp.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-semibold md:hover:text-(--color-border) md:transition-colors group">
                                             <span>{comp.name}</span>
                                             <FaGlobe className="text-slate-500 group-hover:text-(--color-border)" size={14} />
                                         </a>
