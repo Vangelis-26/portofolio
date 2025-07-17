@@ -30,7 +30,7 @@ export default function FloatingButtons() {
                 <Cv />
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="flex items-center justify-center h-12 w-12 rounded-full p-3 shadow-lg bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white transform transition-transform duration-300 hover:scale-110 hover:border-(--color-border)"
+                    className="cursor-pointer flex items-center justify-center h-12 w-12 rounded-full p-3 shadow-lg bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white transform transition-transform duration-300 hover:scale-110 hover:border-(--color-border)"
                     aria-label="Retourner en haut de la page"
                 >
                     <FiArrowUp size={24} />

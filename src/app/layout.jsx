@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <div className="sticky bottom-8 z-40 w-full flex justify-end pr-8 pointer-events-none">
-          <div className="hidden md:block pointer-events-auto">
+          <div className="hidden md:block md:pointer-events-auto">
             <FloatingButtonsWrapper />
           </div>
         </div>

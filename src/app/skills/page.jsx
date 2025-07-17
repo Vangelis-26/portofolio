@@ -32,7 +32,7 @@ export default function CompetencesPage() {
             <div className="space-y-16">
 
                 <FadeInScroll>
-                    <section className="max-w-4xl mx-auto">
+                    <section className="select-none max-w-4xl mx-auto">
                         <h2 className="text-3xl font-bold text-center mb-8">Mes Atouts Stratégiques</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {proSkills.map(skill => (
@@ -49,7 +49,7 @@ export default function CompetencesPage() {
                 </FadeInScroll>
 
                 <FadeInScroll>
-                    <section className="max-w-5xl mx-auto">
+                    <section className="select-none max-w-5xl mx-auto">
                         <h2 className="text-3xl font-bold text-center mb-8">Ma Boîte à Outils Technique</h2>
                         <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
                             {techSkills.map(skillName => (
