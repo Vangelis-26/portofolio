@@ -73,7 +73,6 @@ export default function ContactPage() {
                 method: 'POST',
                 body: dataToSend,
             });
-
             if (response.ok) {
                 setFormStatus('success');
             } else {

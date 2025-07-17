@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import ContactEmail from '@/components/emails/contactEmail';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
@@ -35,10 +36,10 @@ export async function POST(request) {
             attachments,
         });
 
-        return NextResponse.json({ message: "Email envoyé avec succès !" }, { status: 200 });
+        return NextResponse.json({ status: 200 });
 
     } catch (error) {
         console.error(error);
-        return NextResponse.json({ message: "Erreur lors de l'envoi de l'email." }, { status: 500 });
+        return NextResponse.json({ status: 500 });
     }
 }
