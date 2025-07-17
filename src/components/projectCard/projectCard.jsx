@@ -17,6 +17,7 @@ export default function ProjectCard({ type, title, description, image, tags, dur
                     src={image}
                     alt={`Image du projet ${title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-300 group-hover:scale-110"
                 />

@@ -92,7 +92,7 @@ export default function Header() {
         w-full sticky top-0 z-30 transition-all duration-300
         ${isNavScrolled ? 'bg-(--color-background)/80 backdrop-blur-sm border-b border-slate-800' : 'bg-transparent border-b border-transparent'}
       `}>
-        <div className="px-6 md:px-10">
+        <div className="px-4 md:px-10">
           <nav className="flex justify-between items-center py-4">
             <Link
               href="/"
@@ -103,6 +103,7 @@ export default function Header() {
                 src="/logo.webp"
                 alt="Logo Mourier Matthieu"
                 fill
+                sizes="112px"
                 style={{ objectFit: 'contain' }}
               />
             </Link>
@@ -128,15 +129,16 @@ export default function Header() {
             src="/banniere.webp"
             alt="Bannière de la page d'accueil"
             fill
+            sizes="100vw"
             style={{ objectFit: 'cover' }}
             priority
             className="blur-[3px] scale-105"
           />
           <div className="absolute inset-0 bg-black/60"></div>
 
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pt-16 sm:pt-0">
             <div className="animate-fade-in-up">
-              <h1 className="mt-10 text-5xl md:text-7xl font-bold drop-shadow-lg">
+              <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg">
                 Mourier Matthieu
               </h1>
               <p className="mt-4 text-lg md:text-xl font-semibold text-slate-300 drop-shadow-md" style={{ animationDelay: '200ms' }}>
@@ -144,18 +146,18 @@ export default function Header() {
               </p>
 
               <div
-                className="mt-14 pt-4 flex flex-col sm:flex-row items-center justify-center gap-15 animate-fade-in-up"
+                className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up"
                 style={{ animationDelay: '400ms' }}
               >
                 <Link
                   href="/projects"
-                  className="w-full sm:w-auto px-5 py-2 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
                 >
                   Mes projets
                 </Link>
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto px-5 py-2 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm transform transition-transform hover:scale-105"
                 >
                   Me contacter
                 </Link>
