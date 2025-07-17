@@ -17,6 +17,7 @@ export default function ContactPage() {
     const [fileName, setFileName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formStatus, setFormStatus] = useState(null);
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setErrors({ ...errors, [name]: null });
@@ -54,15 +55,32 @@ export default function ContactPage() {
         }
 
         setIsSubmitting(true);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setFormStatus('success');
+            } else {
+                setFormStatus('error');
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'envoi du formulaire :", error);
+            setFormStatus('error');
+        }
+
         setIsSubmitting(false);
-        setFormStatus('success');
     };
 
     return (
         <div className='container mx-auto px-4 py-16'>
             <FadeInScroll>
-
                 <section className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold">Entrons en contact</h1>
                     <p className="mt-4 text-lg text-slate-400">Un projet, une question ou une opportunité ? Écrivez-moi.</p>
@@ -125,11 +143,11 @@ export default function ContactPage() {
                             <label
                                 htmlFor="files"
                                 className="
-            cursor-pointer text-sm font-semibold px-8 py-3 rounded-md
-            border-2 border-slate-700 text-slate-300
-            transition-all duration-300
-            hover:border-(--color-border)/50 hover:bg-(--color-border)/10
-        "
+                                cursor-pointer text-sm font-semibold px-8 py-3 rounded-md
+                                border-2 border-slate-700 text-slate-300
+                                transition-all duration-300
+                                hover:border-(--color-border)/50 hover:bg-(--color-border)/10
+                            "
                             >
                                 {fileName ? fileName : "Ajouter un fichier"}
                             </label>
