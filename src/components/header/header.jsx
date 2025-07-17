@@ -93,11 +93,11 @@ export default function Header() {
         ${isNavScrolled ? 'bg-(--color-background)/80 backdrop-blur-sm border-b border-slate-800' : 'bg-transparent border-b border-transparent'}
       `}>
         <div className="px-4 md:px-10">
-          <nav className="flex justify-between items-center py-4">
+          <nav className="flex justify-end md:justify-between items-center py-4">
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              className="relative block h-12 w-28 transition-transform duration-300 hover:scale-105"
+              className="hidden md:block relative h-12 w-28 transition-transform duration-300 hover:scale-105"
             >
               <Image
                 src="/logo.webp"
@@ -150,7 +150,7 @@ export default function Header() {
                 style={{ animationDelay: '400ms' }}
               >
                 <Link
-                  href="/projects"
+                  href="/projets"
                   className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
                 >
                   Mes projets
