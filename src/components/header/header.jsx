@@ -148,7 +148,7 @@ export default function Header() {
                 style={{ animationDelay: '400ms' }}
               >
                 <Link
-                  href="/projets"
+                  href="/projects"
                   className="w-full sm:w-auto px-5 py-2 rounded-md font-semibold bg-(--color-border) text-white transform transition-transform hover:scale-105"
                 >
                   Mes projets

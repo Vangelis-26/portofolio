@@ -30,7 +30,7 @@ const projectsData = [
         type: "Projet de Formation (Back-End)",
         title: "Mon Vieux Grimoire",
         description: "Développement de l'API REST et de la base de données pour un site de notation de livres avec Node.js, Express et MongoDB.",
-        image: "/Mon_Vieux_Grimoire.webp",
+        image: "/mon_vieux_grimoire.webp",
         tags: ["Node.js", "Express", "MongoDB", "API REST"],
         duration: "60 heures",
         links: {
@@ -42,7 +42,7 @@ const projectsData = [
         type: "Projet de Formation",
         title: "Portfolio d'Architecte d'Intérieur",
         description: "Développement de la partie front-end dynamique du site, récupération des projets via une API et création d'une modale d'upload.",
-        image: "/Sophie_bluel.webp",
+        image: "/sophie_bluel.webp",
         tags: ["JavaScript", "API"],
         duration: "60 heures",
         links: {
