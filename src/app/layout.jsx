@@ -11,25 +11,25 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Mourier Matthieu - Développeur Web",
-  description:
-    "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
+  title: "Portfolio de Mourier Matthieu",
+  description: "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
   authors: { name: "Mourier Matthieu" },
   creator: "Mourier Matthieu",
   openGraph: {
-    title: "Mourier Matthieu - Développeur Web",
-    description:
-      "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
-    url: "https://mouriermatthieu.fr",
-    siteName: "Mourier Matthieu",
+    title: "Portfolio de Mourier Matthieu",
+    description: "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
+    url: "https://mourier-matthieu.tech",
+    siteName: "Portfolio de Mourier Matthieu",
     images: [
       {
-        url: "https://mouriermatthieu.fr/og-image.png",
+        url: "/portfolio.webp",
         width: 1200,
         height: 630,
-        alt: "Mourier Matthieu - Développeur Web",
+        alt: "Portfolio de Mourier Matthieu",
       },
     ],
+    locale: "fr_FR",
+    type: "website",
   },
 };
 
