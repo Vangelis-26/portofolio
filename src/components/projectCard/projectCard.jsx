@@ -30,13 +30,13 @@ export default function ProjectCard({ type, title, description, image, tags, dur
 
                 <h3 className="text-xl font-bold text-white">
                     <Link
-                        href={links.live || links.github || '#'}
+                        href={(links.live && links.live !== '#') ? links.live : (links.github || '#')}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="static after:absolute after:inset-0"
                         aria-label={`Voir le projet ${title}`}
                     >
-                        <span className="relative z-10">{title}</span>
+                        <span className="relative z-20">{title}</span>
                     </Link>
                 </h3>
 
