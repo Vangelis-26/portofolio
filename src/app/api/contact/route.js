@@ -1,25 +1,38 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-
+import ContactEmail from '@/components/emails/contactEmail';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
     try {
-        const { lastname, firstname, mail, message } = await request.json();
+        const data = await request.formData();
+
+        const lastname = data.get('lastname');
+        const firstname = data.get('firstname');
+        const mail = data.get('mail');
+        const message = data.get('message');
+        const file = data.get('file');
+
+        let attachments = [];
+        if (file && file.size > 0) {
+            const fileBuffer = await file.arrayBuffer();
+            attachments.push({
+                filename: file.name,
+                content: Buffer.from(fileBuffer),
+            });
+        }
 
         await resend.emails.send({
-            from: 'Contact <onboarding@resend.dev>',
+            from: 'Contact Portfolio <onboarding@resend.dev>',
             to: 'mourier.matthieu@gmail.com',
             subject: `Nouveau message de ${firstname} ${lastname}`,
-            html: `
-                <h2>Nouveau message depuis votre portfolio</h2>
-                <p><strong>Nom :</strong> ${lastname}</p>
-                <p><strong>Prénom :</strong> ${firstname}</p>
-                <p><strong>Email de contact :</strong> ${mail}</p>
-                <hr />
-                <h3>Message :</h3>
-                <p>${message}</p>
-            `,
+            react: <ContactEmail
+                firstname={firstname}
+                lastname={lastname}
+                mail={mail}
+                message={message}
+            />,
+            attachments,
         });
 
         return NextResponse.json({ message: "Email envoyé avec succès !" }, { status: 200 });

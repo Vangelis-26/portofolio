@@ -56,13 +56,22 @@ export default function ContactPage() {
 
         setIsSubmitting(true);
 
+        // On prépare les données avec FormData pour l'envoi de fichier
+        const dataToSend = new FormData();
+        Object.keys(formData).forEach(key => {
+            if (key !== 'file') {
+                dataToSend.append(key, formData[key]);
+            }
+        });
+        if (formData.file) {
+            dataToSend.append('file', formData.file);
+        }
+
         try {
+            // On envoie l'objet FormData à l'API
             const response = await fetch('/api/contact', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                body: dataToSend,
             });
 
             if (response.ok) {
@@ -143,15 +152,15 @@ export default function ContactPage() {
                             <label
                                 htmlFor="files"
                                 className="
-                                cursor-pointer text-sm font-semibold px-8 py-3 rounded-md
-                                border-2 border-slate-700 text-slate-300
-                                transition-all duration-300
-                                hover:border-(--color-border)/50 hover:bg-(--color-border)/10
-                            "
+                                    cursor-pointer text-sm font-semibold px-8 py-3 rounded-md
+                                    border-2 border-slate-700 text-slate-300
+                                    transition-all duration-300
+                                    hover:border-(--color-border)/50 hover:bg-(--color-border)/10
+                                "
                             >
                                 {fileName ? fileName : "Ajouter un fichier"}
                             </label>
-                            <input className='sr-only' type="file" name="files" id="files" onChange={handleFileChange} />
+                            <input className='sr-only' type="file" name="files" id="files" onChange={handleFileChange} accept='.doc, .docx, .pdf' />
 
                             <button type="submit" disabled={isSubmitting} className='flex items-center justify-center gap-2 cursor-pointer text-sm font-semibold bg-(--color-border) px-8 py-3 hover:opacity-90 transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed min-w-[180px] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-(--color-border)/30'>
                                 <span>{isSubmitting ? 'Envoi en cours...' : 'Envoyer'}</span>
