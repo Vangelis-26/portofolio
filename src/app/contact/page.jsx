@@ -74,7 +74,13 @@ export default function ContactPage() {
                 body: dataToSend,
             });
             if (response.ok) {
-                setFormStatus('success');
+                const { status } = await response.json();
+                if (status === 200) {
+                    setFormData('success');
+                    setFileName('');
+                } else {
+                    setFormStatus('limitFilesize');
+                }
             } else {
                 setFormStatus('error');
             }
@@ -178,6 +184,7 @@ export default function ContactPage() {
 
                     {formStatus === 'success' && <p className="mt-4 text-center text-green-400">Merci ! Votre message a bien été envoyé.</p>}
                     {formStatus === 'error' && <p className="mt-4 text-center text-red-500">Une erreur est survenue. Veuillez réessayer.</p>}
+                    {formStatus === 'limitFilesize' && <p className="mt-4 text-center text-red-500">Le fichier est trop volumineux. Max 40 Mo.</p>}
                 </form>
             </FadeInScroll>
         </div>

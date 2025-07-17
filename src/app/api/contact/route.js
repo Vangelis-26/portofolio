@@ -23,7 +23,7 @@ export async function POST(request) {
             });
         }
 
-        await resend.emails.send({
+        const { error } = await resend.emails.send({
             from: 'Contact Portfolio <onboarding@resend.dev>',
             to: 'mourier.matthieu@gmail.com',
             subject: `Nouveau message de ${firstname} ${lastname}`,
@@ -36,10 +36,13 @@ export async function POST(request) {
             attachments,
         });
 
+        if (error) {
+            return NextResponse.json({ status: 400 });
+        }
+
         return NextResponse.json({ status: 200 });
 
     } catch (error) {
-        console.error(error);
         return NextResponse.json({ status: 500 });
     }
 }
