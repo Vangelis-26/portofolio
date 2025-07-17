@@ -18,7 +18,7 @@ const projectsData = [
         type: "Projet de Formation",
         title: "Kasa - Location Immobilière",
         description: "Création de l'application front-end pour une plateforme de location d'appartements avec React, React Router et des animations en Sass.",
-        image: "/Kasa.webp",
+        image: "/kasa.webp",
         tags: ["React", "React Router", "Sass", "Vite"],
         duration: "60 heures",
         links: {
@@ -54,7 +54,7 @@ const projectsData = [
         type: "Projet de Formation",
         title: "Optimisation SEO - Nina Carducci",
         description: "Audit et optimisation complète du site d'une photographe (Performances, Accessibilité, SEO local avec Schema.org).",
-        image: "/Nina_Carducci.webp",
+        image: "/nina_carducci.webp",
         tags: ["SEO", "Performance", "Accessibilité", "Débugging"],
         duration: "50 heures",
         links: {
@@ -66,7 +66,7 @@ const projectsData = [
         type: "Projet de Formation",
         title: "Booki",
         description: "Intégration de la maquette responsive pour la page d'accueil d'une agence de voyage en HTML & CSS purs.",
-        image: "/Booki.webp",
+        image: "/booki.webp",
         tags: ["HTML", "CSS", "Responsive", "Figma"],
         duration: "80 heures",
         links: {
@@ -78,7 +78,7 @@ const projectsData = [
         type: "Projet de Formation (Gestion de Projet)",
         title: "Planification du 'Menu Maker' - Qwenta",
         description: "Planification complète du développement d'un site, incluant veille technologique, spécifications techniques et création du Kanban.",
-        image: "/Kanban.webp",
+        image: "/kanban.webp",
         tags: ["Gestion de Projet", "Méthode Agile", "Spécifications"],
         duration: "40 heures",
         links: {
