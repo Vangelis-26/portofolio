@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
 
             <main className="flex-grow">
                {children}
+               <Analytics />
             </main>
 
             <div className="sticky bottom-8 z-40 w-full flex justify-end pr-8 pointer-events-none">
@@ -53,7 +54,6 @@ export default function RootLayout({ children }) {
 
             <Footer />
 
-            <Analytics />
 
          </body>
       </html>
