@@ -1,7 +1,6 @@
 import { FaUsers, FaTasks, FaHandshake } from "react-icons/fa";
 import Image from "next/image";
 import FadeinScroll from "@/components/fadeInScroll/fadeInScroll";
-import Cv from "@/components/cv/cv";
 const strengths = [
    {
       icon: <FaUsers />,
