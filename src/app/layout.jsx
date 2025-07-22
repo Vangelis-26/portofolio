@@ -12,25 +12,53 @@ const inter = Inter({
 });
 
 export const metadata = {
-   title: "Portfolio de Mourier Matthieu",
-   description: "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
-   authors: { name: "Mourier Matthieu" },
+   metadataBase: new URL('https://mourier-matthieu.tech'),
+
+   title: {
+      default: 'Matthieu Mourier - Développeur Web FullStack',
+      template: '%s | Matthieu Mourier',
+   },
+
+   description: "Découvrez le portfolio de Matthieu Mourier, développeur web FullStack spécialisé dans la création d'applications modernes avec React, Next.js et Node.js.",
+
+   keywords: ['Développeur Web', 'FullStack', 'React', 'Next.js', 'Node.js', 'Portfolio', 'Freelance', 'Matthieu Mourier'],
+
+   authors: [{ name: "Matthieu Mourier" }],
    creator: "Mourier Matthieu",
+
    openGraph: {
-      title: "Portfolio de Mourier Matthieu",
-      description: "Portfolio de Mourier Matthieu, développeur web spécialisé dans la création de sites et d'applications web modernes.",
+      title: "Matthieu Mourier - Développeur Web FullStack",
+      description: "Découvrez le portfolio d'un développeur passionné, alliant expérience en gestion de projet et expertise technique.",
       url: "https://mourier-matthieu.tech",
-      siteName: "Portfolio de Mourier Matthieu",
+      siteName: "Portfolio de Matthieu Mourier",
       images: [
          {
-            url: "/portfolio.webp",
+            url: '/og-image.png',
             width: 1200,
             height: 630,
-            alt: "Portfolio de Mourier Matthieu",
+            alt: "Portfolio de Matthieu Mourier, Développeur Web FullStack",
          },
       ],
-      locale: "fr_FR",
-      type: "website",
+      locale: 'fr_FR',
+      type: 'website',
+   },
+   twitter: {
+      card: "summary_large_image",
+      title: "Matthieu Mourier - Développeur Web FullStack",
+      description: "Découvrez le portfolio d'un développeur passionné, alliant expérience en gestion de projet et expertise technique.",
+      images: ['/og-image.png'],
+   },
+
+   robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+         index: true,
+         follow: true,
+         'max-video-preview': -1,
+         'max-image-preview': 'large',
+         'max-snippet': -1,
+      },
    },
 };
 
