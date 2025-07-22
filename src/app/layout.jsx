@@ -15,19 +15,18 @@ export const metadata = {
    metadataBase: new URL('https://mourier-matthieu.tech'),
 
    title: {
-      default: 'Matthieu Mourier - Développeur Web FullStack',
+      default: 'Matthieu Mourier | Développeur Web FullStack',
       template: '%s | Matthieu Mourier',
    },
+   description: "Découvrez le portfolio de Matthieu Mourier, développeur web FullStack spécialisé dans la création d'applications modernes avec React, Next.js et Node.js à Montélimar.",
 
-   description: "Découvrez le portfolio de Matthieu Mourier, développeur web FullStack spécialisé dans la création d'applications modernes avec React, Next.js et Node.js.",
-
-   keywords: ['Développeur Web', 'FullStack', 'React', 'Next.js', 'Node.js', 'Portfolio', 'Freelance', 'Matthieu Mourier'],
+   keywords: ['Développeur Web', 'FullStack', 'React', 'Next.js', 'Portfolio', 'Freelance', 'Matthieu Mourier', 'Montélimar'],
 
    authors: [{ name: "Matthieu Mourier" }],
-   creator: "Mourier Matthieu",
+   creator: "Matthieu Mourier",
 
    openGraph: {
-      title: "Matthieu Mourier - Développeur Web FullStack",
+      title: "Matthieu Mourier | Développeur Web FullStack",
       description: "Découvrez le portfolio d'un développeur passionné, alliant expérience en gestion de projet et expertise technique.",
       url: "https://mourier-matthieu.tech",
       siteName: "Portfolio de Matthieu Mourier",
