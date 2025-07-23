@@ -5,12 +5,15 @@ import { FaPaperPlane } from 'react-icons/fa';
 import CustomSelect from '@/components/customSelect/customSelect';
 import Input from '@/components/input/input';
 
-export default function ContactPage() {
-   const [formData, setFormData] = useState({
+export default function ContactForm() {
+   // On définit l'état initial pour pouvoir réinitialiser le formulaire facilement.
+   const initialFormData = {
       identity: '', lastname: '', firstname: '', society: '',
       reason: '', tel: '', mail: '', message: '',
       consent: false, file: null,
-   });
+   };
+
+   const [formData, setFormData] = useState(initialFormData);
    const [errors, setErrors] = useState({});
    const [fileName, setFileName] = useState('');
    const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +40,7 @@ export default function ContactPage() {
       e.preventDefault();
       setFormStatus(null);
 
+      // La logique de validation reste la même.
       const newErrors = {};
       if (!formData.lastname) newErrors.lastname = "Champ obligatoire";
       if (!formData.firstname) newErrors.firstname = "Champ obligatoire";
@@ -69,14 +73,14 @@ export default function ContactPage() {
             method: 'POST',
             body: dataToSend,
          });
+
          if (response.ok) {
-            const { status } = await response.json();
-            if (status === 200) {
-               setFormData('success');
-               setFileName('');
-            } else {
-               setFormStatus('limitFilesize');
-            }
+            // --- CORRECTION ICI ---
+            // On utilise setFormStatus pour le message de succès.
+            setFormStatus('success');
+            // On réinitialise le formulaire à son état initial.
+            setFormData(initialFormData);
+            setFileName('');
          } else {
             setFormStatus('error');
          }
@@ -87,7 +91,6 @@ export default function ContactPage() {
 
       setIsSubmitting(false);
    };
-
 
    return (
       <form onSubmit={handleSubmit} noValidate className='bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl max-w-4xl w-full mx-auto'>
