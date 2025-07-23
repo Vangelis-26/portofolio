@@ -5,8 +5,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import CustomSelect from '@/components/customSelect/customSelect';
 import Input from '@/components/input/input';
 
-export default function ContactForm() {
-   // Toute la logique (états, fonctions) est maintenant ici
+export default function ContactPage() {
    const [formData, setFormData] = useState({
       identity: '', lastname: '', firstname: '', society: '',
       reason: '', tel: '', mail: '', message: '',
@@ -54,11 +53,41 @@ export default function ContactForm() {
       }
 
       setIsSubmitting(true);
-      // Remplacer cette simulation par votre logique d'envoi
-      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      const dataToSend = new FormData();
+      Object.keys(formData).forEach(key => {
+         if (key !== 'file') {
+            dataToSend.append(key, formData[key]);
+         }
+      });
+      if (formData.file) {
+         dataToSend.append('file', formData.file);
+      }
+
+      try {
+         const response = await fetch('/api/contact', {
+            method: 'POST',
+            body: dataToSend,
+         });
+         if (response.ok) {
+            const { status } = await response.json();
+            if (status === 200) {
+               setFormData('success');
+               setFileName('');
+            } else {
+               setFormStatus('limitFilesize');
+            }
+         } else {
+            setFormStatus('error');
+         }
+      } catch (error) {
+         console.error("Erreur lors de l'envoi du formulaire :", error);
+         setFormStatus('error');
+      }
+
       setIsSubmitting(false);
-      setFormStatus('success');
    };
+
 
    return (
       <form onSubmit={handleSubmit} noValidate className='bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl max-w-4xl w-full mx-auto'>
