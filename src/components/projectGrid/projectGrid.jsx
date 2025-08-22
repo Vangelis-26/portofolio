@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import ProjectCard from '@/components/projectCard/projectCard';
-import FadeInScroll from '@/components/fadeInScroll/fadeInScroll';
-import Lightbox from '@/components/lightbox/lightbox';
+import ProjectCard from '@/components/projectCard/projectCard.jsx';
+import FadeInScroll from '@/components/fadeInScroll/fadeInScroll.jsx';
+import Lightbox from '@/components/lightbox/lightbox.jsx';
 
 export default function ProjectGrid({ projects }) {
    const [selectedImage, setSelectedImage] = useState(null);

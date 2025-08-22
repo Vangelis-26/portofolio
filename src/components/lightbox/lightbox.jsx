@@ -20,14 +20,14 @@ export default function Lightbox({ src, onClose }) {
          </button>
 
          <div
-            className="relative w-full h-full max-w-5xl max-h-[90vh]"
+            className="relative w-full h-full max-w-4xl max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
          >
             <Image
                src={src}
                alt="Image du projet en plein écran"
                fill
-               sizes="90vw"
+               sizes="80vw"
                style={{ objectFit: 'contain' }}
             />
          </div>

@@ -1,5 +1,6 @@
 export const projectsData = [
    {
+      slug: "mon-portfolio",
       type: "Projet Personnel",
       title: "Mon Portfolio",
       description: "Le site sur lequel vous naviguez actuellement. Développé avec Next.js et Tailwind CSS pour une expérience moderne, responsive et optimisée.",
@@ -12,6 +13,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "kasa-location-immobiliere",
       type: "Projet de Formation",
       title: "Kasa - Location Immobilière",
       description: "Création de l'application front-end pour une plateforme de location d'appartements avec React, React Router et des animations en Sass.",
@@ -24,6 +26,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "mon-vieux-grimoire",
       type: "Projet de Formation (Back-End)",
       title: "Mon Vieux Grimoire",
       description: "Développement de l'API REST et de la base de données pour un site de notation de livres avec Node.js, Express et MongoDB.",
@@ -36,6 +39,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "sophie-bluel-architecte",
       type: "Projet de Formation",
       title: "Portfolio d'Architecte d'Intérieur",
       description: "Développement de la partie front-end dynamique du site, récupération des projets via une API et création d'une modale d'upload.",
@@ -48,6 +52,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "nina-carducci-photographe",
       type: "Projet de Formation",
       title: "Optimisation SEO - Nina Carducci",
       description: "Audit et optimisation complète du site d'une photographe (Performances, Accessibilité, SEO local avec Schema.org).",
@@ -60,6 +65,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "booki",
       type: "Projet de Formation",
       title: "Booki",
       description: "Intégration de la maquette responsive pour la page d'accueil d'une agence de voyage en HTML & CSS purs.",
@@ -72,6 +78,7 @@ export const projectsData = [
       }
    },
    {
+      slug: "planification-menu-maker-qwenta",
       type: "Projet de Formation (Gestion de Projet)",
       title: "Planification du 'Menu Maker' - Qwenta",
       description: "Planification complète du développement d'un site, incluant veille technologique, spécifications techniques et création du Kanban.",

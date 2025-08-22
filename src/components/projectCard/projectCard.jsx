@@ -1,15 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
 import TagIcon from '@/components/tagIcons/tagIcons';
 
-export default function ProjectCard({ type, title, description, image, tags, duration, links, onImageClick }) {
+export default function ProjectCard({ slug, type, title, description, image, tags, duration, links, onImageClick }) {
    return (
       <div className="
             group flex flex-col bg-slate-900/50 border border-slate-800
             rounded-lg h-full transform transition-all duration-300 ease-in-out
-            hover:scale-105 hover:-translate-y-1 hover:border-transparent
-            hover:ring-2 hover:ring-(--color-border)
+            md:hover:scale-105 md:hover:-translate-y-1 md:hover:border-transparent
+            md:hover:ring-2 md:hover:ring-(--color-border) select-none
         ">
          <button
             onClick={onImageClick}
@@ -22,7 +23,7 @@ export default function ProjectCard({ type, title, description, image, tags, dur
                fill
                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                style={{ objectFit: 'cover' }}
-               className="transition-transform duration-300 group-hover:scale-110"
+               className="transition-transform duration-300 md:group-hover:scale-110"
             />
          </button>
 
@@ -32,7 +33,12 @@ export default function ProjectCard({ type, title, description, image, tags, dur
                {duration && <span className="flex items-center gap-1"><FiClock />{duration}</span>}
             </div>
 
-            <h3 className="text-xl font-bold text-white">{title}</h3>
+            {/* Le titre est maintenant un lien vers la page de détail */}
+            <h3 className="text-xl font-bold text-white">
+               <Link href={`/projets/${slug}`} className="hover:text-(--color-border) transition-colors">
+                  {title}
+               </Link>
+            </h3>
 
             <p className="mt-2 text-slate-400 text-sm flex-grow">{description}</p>
 

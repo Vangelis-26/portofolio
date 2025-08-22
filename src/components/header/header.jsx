@@ -3,52 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import NavLinks from '../navLinks/navLinks.jsx';
 import { FiMenu, FiX } from "react-icons/fi";
 import Cv from '../cv/cv';
 import "../../app/globals.css";
-
-function NavLinks({ className, onLinkClick, isMenuOpen }) {
-   const links = [
-      { href: "/", label: "Accueil" },
-      { href: "/career", label: "Parcours" },
-      { href: "/projects", label: "Projets" },
-      { href: "/skills", label: "Compétences" },
-      { href: "/contact", label: "Contact" },
-   ];
-   const pathname = usePathname();
-
-   return (
-      <ul className={`flex items-center gap-6 text-base font-medium ${className || ''}`}>
-         {links.map((link, index) => {
-            const isActive = pathname === link.href;
-            return (
-               <li
-                  key={link.href}
-                  className={isMenuOpen ? 'animate-fade-in-up' : ''}
-                  style={{ animationDelay: isMenuOpen ? `${index * 100}ms` : '0ms' }}
-               >
-                  <Link
-                     href={link.href}
-                     onClick={onLinkClick}
-                     className={`
-                                relative py-2 transition-colors duration-300
-                                ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}
-                                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full 
-                                after:bg-(--color-border) after:origin-center after:transition-transform after:duration-300
-                                ${isActive ? 'after:scale-x-100' : 'after:scale-x-0'}
-                                hover:after:scale-x-100
-                            `}
-                  >
-                     {link.label}
-                  </Link>
-               </li>
-            );
-         })}
-      </ul>
-   );
-}
-
 
 export default function Header() {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
