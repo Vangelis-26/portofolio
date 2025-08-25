@@ -8,9 +8,12 @@ export const projectsData = [
       tags: ["Next.js", "React", "Tailwind CSS", "Responsive"],
       duration: "50 heures",
       links: {
-         github: "#",
-         live: "#"
-      }
+         github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
+         live: "https://mouriermatthieu.tech"
+      },
+      challenge: "L'objectif était de créer une vitrine professionnelle pour présenter mes compétences. Le défi principal était de concevoir un site à la fois esthétique, performant, optimisé pour le SEO et entièrement responsive, en utilisant les meilleures pratiques de Next.js.",
+      solution: "J'ai choisi Next.js pour ses performances et son SEO intégré. L'interface a été construite avec des composants React réutilisables et stylisée avec Tailwind CSS pour un développement rapide et cohérent. Le déploiement continu est assuré par Vercel.",
+      acquiredSkills: ["Développement Next.js", "Composants React réutilisables", "Styling avec Tailwind CSS", "Déploiement continu (Vercel)", "Optimisation SEO (métadonnées)"]
    },
    {
       slug: "kasa-location-immobiliere",
@@ -23,7 +26,10 @@ export const projectsData = [
       links: {
          github: "https://github.com/Vangelis-26/P5-Kasa",
          live: "https://vangelis-26.github.io/P5-Kasa/"
-      }
+      },
+      challenge: "Dans le cadre d'une refonte, ma mission était de développer l'intégralité du front-end d'une application de location immobilière en utilisant React, en l'absence d'une API back-end.",
+      solution: "J'ai construit une Single-Page Application (SPA) avec Vite, en utilisant React Router pour une navigation fluide sans rechargement de page. Les données des logements sont chargées depuis un fichier JSON local. J'ai également développé des composants réutilisables (cartes, carrousel, menus déroulants) et implémenté des animations en Sass.",
+      acquiredSkills: ["Single-Page Application (SPA)", "Routing avec React Router", "Gestion d'état (useState, useEffect)", "Styling avancé avec Sass"]
    },
    {
       slug: "mon-vieux-grimoire",
@@ -36,7 +42,10 @@ export const projectsData = [
       links: {
          github: "https://github.com/Vangelis-26/P6-Mon-Vieux-Grimoire",
          live: "#"
-      }
+      },
+      challenge: "Développer l'API REST complète et sécurisée pour un site de notation de livres, en partant d'un front-end déjà existant. Le back-end devait gérer les utilisateurs, les livres et les notations, y compris l'upload d'images.",
+      solution: "J'ai mis en place un serveur Node.js avec le framework Express, connecté à une base de données MongoDB via Mongoose. J'ai développé des routes d'API pour toutes les opérations CRUD, implémenté un système d'authentification par token (JWT), et un middleware pour l'optimisation des images uploadées.",
+      acquiredSkills: ["Création d'API REST", "Serveur avec Node.js & Express", "Base de données NoSQL (MongoDB)", "Sécurisation (Authentification JWT)", "Gestion de fichiers (Middleware)"]
    },
    {
       slug: "sophie-bluel-architecte",
@@ -49,7 +58,10 @@ export const projectsData = [
       links: {
          github: "https://github.com/Vangelis-26/P3-Sophie_Bluel",
          live: "#"
-      }
+      },
+      challenge: "Rendre dynamique le portfolio d'une architecte d'intérieur à partir d'un code HTML statique. Il fallait récupérer les projets depuis une API et créer de nouvelles fonctionnalités interactives de zéro.",
+      solution: "En utilisant JavaScript pur, j'ai développé la logique pour appeler l'API et afficher dynamiquement les projets dans la galerie. J'ai également créé une page de connexion fonctionnelle et une modale interactive pour permettre à l'administrateur d'ajouter ou de supprimer des projets sans toucher au code.",
+      acquiredSkills: ["JavaScript \"Vanilla\"", "Manipulation dynamique du DOM", "Communication avec une API (Fetch)", "Logique d'authentification front-end"]
    },
    {
       slug: "nina-carducci-photographe",
@@ -62,7 +74,10 @@ export const projectsData = [
       links: {
          github: "https://github.com/Vangelis-26/P4-Nina_Carducci",
          live: "https://vangelis-26.github.io/P4-Nina_Carducci/"
-      }
+      },
+      challenge: "Auditer un site de photographe existant présentant des problèmes de performance, d'accessibilité et de SEO, puis implémenter des solutions concrètes pour corriger ces points.",
+      solution: "Après un audit complet avec Lighthouse et Wave, j'ai optimisé la taille et le format des images, restructuré le code HTML pour une meilleure sémantique et accessibilité, et ajouté des métadonnées enrichies (Schema.org) pour le SEO local. J'ai également débuggé des fonctionnalités JavaScript défaillantes dans la galerie.",
+      acquiredSkills: ["Audit de performance (Lighthouse)", "Optimisation SEO On-Page", "Accessibilité (Normes WCAG)", "Débugging de code existant", "Référencement local (Schema.org)"]
    },
    {
       slug: "booki",
@@ -75,7 +90,10 @@ export const projectsData = [
       links: {
          github: "https://github.com/Vangelis-26/P2-Booki",
          live: "https://vangelis-26.github.io/P2-Booki/"
-      }
+      },
+      challenge: "Intégrer une maquette Figma pour la page d'accueil d'une agence de voyage en respectant un design 'pixel-perfect' et en assurant une parfaite responsivité sur mobile, tablette et desktop.",
+      solution: "J'ai structuré la page en utilisant les balises sémantiques HTML5 et stylisé l'ensemble avec CSS3, en utilisant Flexbox pour les alignements principaux. Des media queries ont été mises en place pour adapter le design à chaque point de rupture défini dans les maquettes.",
+      acquiredSkills: ["Intégration \"Pixel-Perfect\"", "Responsive Design (Mobile-First)", "Mise en page avec Flexbox", "Utilisation de maquettes Figma"]
    },
    {
       slug: "planification-menu-maker-qwenta",
@@ -88,7 +106,10 @@ export const projectsData = [
       links: {
          github: "#",
          live: "#"
-      }
+      },
+      challenge: "Assurer la planification complète d'un nouveau projet web sans écrire une seule ligne de code. Il s'agissait de définir la feuille de route technique et organisationnelle pour l'équipe de développement.",
+      solution: "J'ai mené une veille technologique pour choisir la stack la plus adaptée. J'ai ensuite rédigé les spécifications techniques détaillées à partir des besoins fonctionnels et découpé le projet en tâches sur un tableau Kanban (Notion), en estimant la complexité de chaque User Story.",
+      acquiredSkills: ["Gestion de projet Agile", "Rédaction de spécifications", "Veille technologique", "Kanban & Notion"]
    }
 ];
 
