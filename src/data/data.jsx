@@ -175,7 +175,7 @@ export const experiencesData = [
 
 export const formationsData = [
    {
-      date: "2023 – 2024",
+      date: "2025",
       title: "OpenClassrooms",
       subtitle: "Développeur Web - RNCP Niveau 5 (Bac+2)",
       link: "https://openclassrooms.com/fr/paths/556-developpeur-web",
