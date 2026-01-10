@@ -188,7 +188,7 @@ export const experiencesData = [
       title: "Commercial Itinérant & Vendeur Conseil",
       location: "Montélimar - France",
       description: [
-         "Commercialisation de solutions mobiles/internet, gestion intégrale du point de vente (stocks, merchandising) et atteinte systématique des objectifs commerciaux."
+         "Vente & Conseil : Commercialisation de solutions mobiles/internet, gestion intégrale du point de vente (stocks, merchandising) et atteinte systématique des objectifs commerciaux."
       ],
       companies: [
          { name: "Orange", link: "https://www.orange.fr/" },
