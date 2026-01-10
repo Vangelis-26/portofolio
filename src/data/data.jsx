@@ -115,57 +115,81 @@ export const projectsData = [
 
 export const experiencesData = [
    {
-      date: "Depuis 2020",
-      title: "Chargé de conventionnement et relation bailleur",
+      date: "2020 – 2025",
+      title: "Chargé de Négociation & Conventionnement (Fibre Optique)",
       company: "Axione",
       location: "Montélimar - France",
       companyLink: "https://www.axione.fr/",
-      description: "En tant qu'interface clé du déploiement de la fibre, j'ai coordonné les relations entre les équipes techniques, les collectivités et les clients. J'ai développé une expertise dans la gestion de projet complexe et la résolution de problématiques techniques et contractuelles pour assurer la réussite des raccordements.",
+      description: [
+         "Négociation Stratégique : Pilotage d'un portefeuille de bailleurs et syndics pour l'obtention des accords de déploiement (Conventionnement).",
+         "Gestion de Projet : Coordination transversale entre les équipes travaux, les collectivités et les propriétaires.",
+         "Résultat : Sécurisation de 8 000 conventions par an, permettant le raccordement de 14 000 logements. Résolution de litiges complexes réduisant les délais de blocage de 80%."
+      ],
    },
    {
       date: "2020",
-      title: "Chargé d'affaires",
+      title: "Chargé d'Affaires Technique",
       company: "Domobat",
       location: "Montélimar - France",
       companyLink: "http://www.domobat-expertises.fr/",
-      description: "J'ai géré l'intégralité du cycle de vie des projets clients, depuis l'analyse technique des besoins jusqu'à la coordination des démarches réglementaires (DICT, permissions de voirie). Ce rôle m'a permis d'aiguiser ma capacité à traduire des exigences complexes en plans d'action concrets.",
+      description: [
+         "Pilotage d'Affaires : Gestion du cycle complet, de la détection du besoin client jusqu'à la livraison du chantier.",
+         "Coordination Réglementaire : Supervision des DICT et permissions de voirie, garantissant la conformité juridique des interventions.",
+         "Performance : Transformation des exigences clients en plans d'action techniques, assurant un taux de satisfaction client de 90%."
+      ],
    },
    {
       date: "2018 – 2019",
-      title: "Programmateur CPA",
+      title: "Coordinateur d'Activités & Planification",
       company: "Enedis",
       location: "Montélimar - France",
       companyLink: "https://www.enedis.fr/",
-      description: "Responsable de l'optimisation logistique des tournées de techniciens via l'analyse de données opérationnelles. J'ai mis en place des plannings pour maximiser l'efficacité des interventions, tout en gérant la résolution de litiges et le suivi des paiements fournisseurs.",
+      description: [
+         "Optimisation des Ressources : Gestion des plannings d'interventions pour une flotte d'une trentaines de techniciens.",
+         "Rentabilité : Maximisation du taux de charge des techniciens via l'analyse de données, réduisant les temps de trajet improductifs.",
+         "Gestion de Conflits : Résolution des litiges fournisseurs et suivi de la facturation."
+      ],
    },
    {
       date: "2017",
-      title: "Technicien Support Multimétrics",
+      title: "Chargé de Support & Relation Client Technique",
       company: "C'Pro",
       location: "Valence - France",
       companyLink: "https://koesio.com/",
-      description: "Spécialisé dans le diagnostic et la résolution de pannes informatiques à distance. Cette expérience a renforcé ma capacité à débugger des problèmes techniques sous pression et à communiquer des solutions claires à des utilisateurs non-techniques.",
+      description: [
+         "Gestion de Crise : Résolution d'incidents techniques sous pression avec une approche pédagogique pour des clients non-techniques.",
+         "Qualité de Service : Maintien d'un haut niveau de satisfaction client grâce à une communication claire et orientée solution."
+      ],
    },
    {
       date: "2016",
       title: "Responsable de Magasin",
       company: "SIMAC",
       location: "Montélimar - France",
-      description: "En tant que pilote du point de vente, j'ai assuré une gestion 360° : financière (caisse, trésorerie), logistique (commandes, stocks), et commerciale (devis, facturation, litiges). Une expérience clé dans la compréhension des enjeux globaux d'une entreprise.",
+      description: [
+         "Gestion Administrative & Financière : Devis, facturation, bons de commande et gestion des flux d'argent (entrées/sorties).",
+         "Logistique : Réception, contrôle marchandises et gestion des litiges fournisseurs.",
+         "Management : Responsabilité des ouvertures/fermetures et de la tenue du point de vente."
+      ],
    },
    {
       date: "2013 – 2015",
-      title: "Conseiller Client",
+      title: "Conseiller Client & Référent Projet",
       company: "EDF",
       location: "Montélimar - France",
       companyLink: "https://www.edf.fr/",
-      description: "Au sein d'une plateforme téléphonique, j'ai animé un pôle projet pour l'équipe tout en gérant la relation client. Ma mission était de vulgariser des informations complexes (facturation, taxes) et d'élaborer des solutions sur mesure comme des plans de paiement, tout en assurant la gestion sécurisée des données sensibles et des transactions.",
+      description: [
+         "Vente & Conseil (Upselling) : Analyse des besoins clients pour proposer des solutions adaptées (mensualisation, services annexes).",
+         "Pédagogie : Vulgarisation d'informations complexes (facturation, taxes) pour faciliter l'adhésion du client."
+      ],
    },
    {
-      date: "2008 – 2013",
-      title: "Vendeur",
+      date: "2008 – 2012",
+      title: "Commercial Itinérant & Vendeur Conseil",
       location: "Montélimar - France",
-      description: "Conseil technique et commercial en téléphonie mobile. Ma mission était de traduire les besoins des clients en solutions produits adaptées et de participer activement à la gestion des actions commerciales.",
+      description: [
+         "Commercialisation de solutions mobiles/internet, gestion intégrale du point de vente (stocks, merchandising) et atteinte systématique des objectifs commerciaux."
+      ],
       companies: [
          { name: "Orange", link: "https://www.orange.fr/" },
          { name: "SFR", link: "https://www.sfr.fr/" }

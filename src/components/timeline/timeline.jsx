@@ -52,7 +52,25 @@ export default function Timeline({ items }) {
                      </p>
                   )}
 
-                  {item.description && <p className="text-slate-400 mt-2">{item.description}</p>}
+                  {item.description && (
+                     Array.isArray(item.description) ? (
+                        <ul className="list-disc list-outside text-slate-400 mt-2 space-y-1 ml-4">
+                           {item.description.map((point, i) => {
+                              const parts = point.split(':');
+                              const competence = parts[0];
+                              const descriptionText = parts.slice(1).join(':');
+                              return (
+                                 <li key={i}>
+                                    <strong className="font-semibold text-blue-300">{competence}</strong>
+                                    {descriptionText && `: ${descriptionText}`}
+                                 </li>
+                              );
+                           })}
+                        </ul>
+                     ) : (
+                        <p className="text-slate-400 mt-2">{item.description}</p>
+                     )
+                  )}
                </div>
             </div>
          ))}
