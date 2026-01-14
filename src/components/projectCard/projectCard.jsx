@@ -33,11 +33,12 @@ export default function ProjectCard({ slug, type, title, description, image, tag
                {duration && <span className="flex items-center gap-1"><FiClock />{duration}</span>}
             </div>
 
-            {/* Le titre est maintenant un lien vers la page de détail */}
+            {/* Le titre n'est temporairement plus un lien */}
             <h3 className="text-xl font-bold text-white">
-               <Link href={`/projets/${slug}`} className="hover:text-(--color-border) transition-colors">
+               {title}
+               {/* <Link href={`/projets/${slug}`} className="hover:text-(--color-border) transition-colors">
                   {title}
-               </Link>
+               </Link> */}
             </h3>
 
             <p className="mt-2 text-slate-400 text-sm flex-grow">{description}</p>

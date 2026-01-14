@@ -9,7 +9,7 @@ export const projectsData = [
       duration: "50 heures",
       links: {
          github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
-         live: "https://mouriermatthieu.tech"
+         live: "https://mourier-matthieu.tech"
       },
       challenge: "L'objectif était de créer une vitrine professionnelle pour présenter mes compétences. Le défi principal était de concevoir un site à la fois esthétique, performant, optimisé pour le SEO et entièrement responsive, en utilisant les meilleures pratiques de Next.js.",
       solution: "J'ai choisi Next.js pour ses performances et son SEO intégré. L'interface a été construite avec des composants React réutilisables et stylisée avec Tailwind CSS pour un développement rapide et cohérent. Le déploiement continu est assuré par Vercel.",
