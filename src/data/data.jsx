@@ -6,7 +6,7 @@ export const projectsData = [
       description: "Le site sur lequel vous naviguez actuellement. Développé avec Next.js et Tailwind CSS pour une expérience moderne, responsive et optimisée.",
       image: "/portfolio.webp",
       tags: ["Next.js", "React", "Tailwind CSS", "Responsive"],
-      duration: "50 heures",
+      duration: "170 heures",
       links: {
          github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
          live: "https://mourier-matthieu.tech"
@@ -22,7 +22,7 @@ export const projectsData = [
       description: "Création de l'application front-end pour une plateforme de location d'appartements avec React, React Router et des animations en Sass.",
       image: "/kasa.webp",
       tags: ["React", "React Router", "Sass", "Vite"],
-      duration: "60 heures",
+      duration: "90 heures",
       links: {
          github: "https://github.com/Vangelis-26/P5-Kasa",
          live: "https://vangelis-26.github.io/P5-Kasa/"
@@ -38,7 +38,7 @@ export const projectsData = [
       description: "Développement de l'API REST et de la base de données pour un site de notation de livres avec Node.js, Express et MongoDB.",
       image: "/mon_vieux_grimoire.webp",
       tags: ["Node.js", "Express", "MongoDB", "API REST"],
-      duration: "60 heures",
+      duration: "70 heures",
       links: {
          github: "https://github.com/Vangelis-26/P6-Mon-Vieux-Grimoire",
          live: "#"
@@ -54,7 +54,7 @@ export const projectsData = [
       description: "Développement de la partie front-end dynamique du site, récupération des projets via une API et création d'une modale d'upload.",
       image: "/sophie_bluel.webp",
       tags: ["JavaScript", "API"],
-      duration: "60 heures",
+      duration: "70 heures",
       links: {
          github: "https://github.com/Vangelis-26/P3-Sophie_Bluel",
          live: "#"
@@ -70,7 +70,7 @@ export const projectsData = [
       description: "Audit et optimisation complète du site d'une photographe (Performances, Accessibilité, SEO local avec Schema.org).",
       image: "/nina_carducci.webp",
       tags: ["SEO", "Performance", "Accessibilité", "Débugging"],
-      duration: "50 heures",
+      duration: "80 heures",
       links: {
          github: "https://github.com/Vangelis-26/P4-Nina_Carducci",
          live: "https://vangelis-26.github.io/P4-Nina_Carducci/"
@@ -102,7 +102,7 @@ export const projectsData = [
       description: "Planification complète du développement d'un site, incluant veille technologique, spécifications techniques et création du Kanban.",
       image: "/kanban.webp",
       tags: ["Gestion de Projet", "Méthode Agile", "Spécifications"],
-      duration: "40 heures",
+      duration: "60 heures",
       links: {
          github: "#",
          live: "#"
