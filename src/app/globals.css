@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
 :root {
-    --color-background: rgb(16, 24, 41);
-    --color-border: rgb(97, 94, 255);
+   --color-background: rgb(16, 24, 41);
+   --color-border: #10b981;
 }

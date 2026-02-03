@@ -1,5 +1,28 @@
 export const projectsData = [
    {
+      slug: "meeple-milestones",
+      isFeatured: true,
+      type: "Projet Phare - Application Web Fullstack",
+      title: "Meeple & Milestones",
+      description: "L'application 'Premium' indispensable pour les collectionneurs de jeux de société. Une plateforme immersive conçue pour transformer vos parties en une épopée visuelle et statistique.",
+      image: "/meeple-milestones.png",
+      tags: ["React 18", "Supabase", "Tailwind CSS", "Recharts", "Framer Motion"],
+      duration: "110 heures (Développement intensif)",
+      links: {
+         github: "https://github.com/Vangelis-26/meeple-milestones",
+         live: "https://meeple-milestones-gg9c.vercel.app/"
+      },
+      challenge: "Déployer une architecture 'Privacy-First' robuste. Le défi : orchestrer la synchronisation en temps réel avec Supabase tout en gérant un système de cache complexe pour l'API BoardGameGeek, afin d'offrir une fluidité parfaite sans saturation de données.",
+      solution: "Implémentation d'une sécurité granulaire (RLS) pour isoler les données utilisateurs. Côté Front, j'ai développé un Design System 'Grimoire' tokenisé sous Tailwind et des graphiques interactifs via Recharts, le tout porté par les performances de React 18 et des animations fluides avec Framer Motion.",
+      acquiredSkills: [
+         "Architecture Cloud (Supabase & RLS)",
+         "Gestion de cache & Performance API",
+         "Data-Visualisation interactive",
+         "UI/UX Design 'Premium' & Mobile-First",
+         "Vision 360° : De la conception à la mise en production"
+      ]
+   },
+   {
       slug: "mon-portfolio",
       type: "Projet Personnel",
       title: "Mon Portfolio",
