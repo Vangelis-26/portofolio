@@ -5,21 +5,21 @@ import FadeinScroll from "@/components/fadeInScroll/fadeInScroll";
 const strengths = [
    {
       icon: <FaUsers />,
-      title: "Expérience Client & Commerciale",
+      title: "Vision Business & Client",
       description:
-         "Plus de quinze ans au cœur de secteurs dynamiques m'ont permis de cultiver un sens aigu de la relation client, de la gestion d'actions commerciales au déploiement de projets d'envergure.",
+         "15 ans d'expertise en relation client me permettent de comprendre vos enjeux métiers avant même de taper la première ligne de code.",
    },
    {
       icon: <FaTasks />,
-      title: "Pilotage & Coordination",
+      title: "Rigueur Opérationnelle",
       description:
-         "Ma capacité à piloter des affaires complexes, optimiser des plannings et coordonner des équipes est un atout majeur pour garantir le succès et le respect des délais de chaque projet web.",
+         "Ancien Chef de Projet, je maîtrise le cycle de vie logiciel, de la planification Agile au respect strict des deadlines.",
    },
    {
       icon: <FaHandshake />,
-      title: "Pont entre Technique et Stratégie",
+      title: "Traducteur Technique",
       description:
-         "Je traduis avec finesse les besoins d'un client en spécifications fonctionnelles claires. Mon ambition est d'allier la rigueur du code à une compréhension profonde des enjeux humains et commerciaux.",
+         "Je fais le pont entre vos besoins stratégiques et la réalité technique, garantissant des solutions web pérennes et évolutives.",
    },
 ];
 
@@ -29,33 +29,32 @@ export default function Intro() {
          <FadeinScroll>
             <section className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-5xl">
                <div className="flex justify-center mb-8">
-                  <div className="relative">
-                     <div className="absolute -inset-1.5 bg-(--color-border)/20 rounded-2xl blur-xl"></div>
-                     <div className="relative w-32 md:w-40 aspect-[903/1368] overflow-hidden rounded-xl shadow-lg">
+                  <div className="relative group">
+                     {/* Cercle décoratif animé derrière la photo */}
+                     <div className="absolute -inset-4 bg-(--color-border)/20 rounded-full blur-2xl group-hover:bg-(--color-border)/40 transition-all duration-500"></div>
+
+                     <div className="relative w-32 md:w-44 aspect-[903/1368] overflow-hidden rounded-2xl shadow-2xl border-2 border-white/10 group-hover:border-(--color-border)/50 transition-colors">
                         <Image
                            src="/photo.webp"
                            alt="Photo de Matthieu Mourier"
                            width={903}
                            height={1368}
                            priority
-                           className="object-cover"
+                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                      </div>
                   </div>
                </div>
 
-               {/* Content Section */}
                <div className="flex-1 text-center lg:text-left">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                     <span className="block">Développeur Web</span>
-                     <span className="block text-transparent bg-gradient-to-r from-(--color-border) to-slate-400 bg-clip-text">
-                        avec une vision 360°
+                  <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                     <span className="block">Matthieu Mourier</span>
+                     <span className="block text-transparent bg-gradient-to-r from-(--color-border) to-emerald-200 bg-clip-text">
+                        Vision 360° & Code
                      </span>
-                  </h1>{" "}
-                  <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-                     Fort de plus de 15 ans d'expérience en gestion de projet et
-                     relation client, je conçois et développe des solutions web
-                     innovantes qui transforment vos idées en succès concrets.
+                  </h1>
+                  <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl font-medium">
+                     Je fusionne la rigueur du <span className="text-white font-bold">Chef de Projet</span> et la créativité du <span className="text-(--color-border) font-bold">Développeur FullStack</span> pour bâtir des applications web à haute valeur ajoutée.
                   </p>
                </div>
             </section>

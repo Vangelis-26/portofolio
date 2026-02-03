@@ -64,11 +64,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
    return (
       <html lang="fr">
-         <body className={`${inter.className} bg-(--color-background) text-white min-h-screen flex flex-col`}>
+         <body className={`${inter.className} bg-(--color-background) text-white min-h-screen flex flex-col relative overflow-x-hidden`}>
+
+            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
+               <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--color-border)/10 rounded-full blur-[120px]"></div>
+               <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-blue-500/5 rounded-full blur-[100px]"></div>
+            </div>
 
             <Header />
 
-            <main className="flex-grow">
+            <main className="flex-grow relative z-10">
                {children}
                <Analytics />
             </main>
@@ -80,8 +85,6 @@ export default function RootLayout({ children }) {
             </div>
 
             <Footer />
-
-
          </body>
       </html>
    );
