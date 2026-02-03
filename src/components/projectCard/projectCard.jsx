@@ -1,67 +1,47 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
-import { FiClock } from 'react-icons/fi';
+import { FiClock, FiArrowRight } from 'react-icons/fi';
 import TagIcon from '@/components/tagIcons/tagIcons';
 
 export default function ProjectCard({ slug, type, title, description, image, tags, duration, links, onImageClick }) {
+   const hasLive = links.live && links.live !== '#';
+   const hasGithub = links.github && links.github !== '#';
+
    return (
-      <div className="
-            group flex flex-col bg-slate-900/50 border border-slate-800
-            rounded-lg h-full transform transition-all duration-300 ease-in-out
-            md:hover:scale-105 md:hover:-translate-y-1 md:hover:border-transparent
-            md:hover:ring-2 md:hover:ring-(--color-border) select-none
-        ">
-         <button
-            onClick={onImageClick}
-            className="relative h-48 w-full overflow-hidden rounded-t-lg"
-            aria-label={`Agrandir l'image du projet ${title}`}
-         >
-            <Image
-               src={image}
-               alt={`Image du projet ${title}`}
-               fill
-               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-               style={{ objectFit: 'cover' }}
-               className="transition-transform duration-300 md:group-hover:scale-110"
-            />
+      <div className="group flex flex-col bg-slate-900/50 border border-slate-800 rounded-lg h-full transition-all hover:border-emerald-500/50">
+         <button onClick={onImageClick} className="relative h-48 w-full overflow-hidden rounded-t-lg bg-slate-900">
+            <Image src={image} alt={title} fill className="object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" />
          </button>
 
          <div className="p-6 flex flex-col flex-grow">
-            <div className="flex justify-between items-center text-xs text-slate-400 mb-2">
-               <span className="bg-slate-800 border border-slate-700 px-2 py-0.5 rounded-md">{type}</span>
+            <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-slate-500 mb-4">
+               <span className="border border-slate-800 px-2 py-0.5 rounded">{type}</span>
                {duration && <span className="flex items-center gap-1"><FiClock />{duration}</span>}
             </div>
 
-            {/* Le titre n'est temporairement plus un lien */}
-            <h3 className="text-xl font-bold text-white">
-               {title}
-               {/* <Link href={`/projets/${slug}`} className="hover:text-(--color-border) transition-colors">
+            <h3 className="text-xl font-bold text-white mb-2">
+               <Link href={`/projets/${slug}`} className="hover:text-emerald-400 transition-colors">
                   {title}
-               </Link> */}
+               </Link>
             </h3>
 
-            <p className="mt-2 text-slate-400 text-sm flex-grow">{description}</p>
+            <p className="text-slate-400 text-xs leading-relaxed flex-grow line-clamp-3 mb-6">{description}</p>
 
-            <div className="mt-4 flex flex-wrap gap-2">
-               {tags.map((tag) => (
-                  <span key={tag} className="flex items-center justify-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">
-                     <TagIcon tagName={tag} />
-                     {tag}
-                  </span>
-               ))}
-            </div>
+            <Link href={`/projets/${slug}`} className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-emerald-500 hover:text-white transition-all group/link">
+               Vue d'ensemble <FiArrowRight className="transition-transform group-hover/link:translate-x-1" />
+            </Link>
          </div>
 
-         <div className="border-t border-slate-800 mt-4 p-4 flex justify-end gap-4">
-            {links.github && links.github !== '#' && (
-               <a href={links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                  <FaGithub /><span>Code</span>
+         <div className="border-t border-slate-800/50 p-4 flex justify-end gap-5 bg-slate-900/20">
+            {hasGithub && (
+               <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
+                  <FaGithub size={18} />
                </a>
             )}
-            {links.live && links.live !== '#' && (
-               <a href={links.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                  <FaGlobe /><span>Live</span>
+            {hasLive && (
+               <a href={links.live} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
+                  <FaGlobe size={18} />
                </a>
             )}
          </div>

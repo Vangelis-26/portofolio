@@ -2,41 +2,34 @@ export const projectsData = [
    {
       slug: "meeple-milestones",
       isFeatured: true,
-      type: "Projet Phare - Application Web Fullstack",
+      type: "Application Web Fullstack",
       title: "Meeple & Milestones",
-      description: "L'application 'Premium' indispensable pour les collectionneurs de jeux de société. Une plateforme immersive conçue pour transformer vos parties en une épopée visuelle et statistique.",
+      description: "Plateforme premium de suivi de challenges ludiques. Une expérience immersive mêlant synchronisation temps réel et data-visualisation pour les passionnés de jeux de société.",
       image: "/meeple-milestones.png",
       tags: ["React 18", "Supabase", "Tailwind CSS", "Recharts", "Framer Motion"],
-      duration: "110 heures (Développement intensif)",
+      duration: "110 heures (Sprint intensif)",
       links: {
-         github: "https://github.com/Vangelis-26/meeple-milestones",
+         github: "https://github.com/Vangelis-26",
          live: "https://meeple-milestones-gg9c.vercel.app/"
       },
-      challenge: "Déployer une architecture 'Privacy-First' robuste. Le défi : orchestrer la synchronisation en temps réel avec Supabase tout en gérant un système de cache complexe pour l'API BoardGameGeek, afin d'offrir une fluidité parfaite sans saturation de données.",
-      solution: "Implémentation d'une sécurité granulaire (RLS) pour isoler les données utilisateurs. Côté Front, j'ai développé un Design System 'Grimoire' tokenisé sous Tailwind et des graphiques interactifs via Recharts, le tout porté par les performances de React 18 et des animations fluides avec Framer Motion.",
-      acquiredSkills: [
-         "Architecture Cloud (Supabase & RLS)",
-         "Gestion de cache & Performance API",
-         "Data-Visualisation interactive",
-         "UI/UX Design 'Premium' & Mobile-First",
-         "Vision 360° : De la conception à la mise en production"
-      ]
+      challenge: "Orchestrer une architecture 'Privacy-First' avec Supabase (RLS) et gérer un cache complexe pour l'API BoardGameGeek afin de garantir une fluidité totale.",
+      solution: "Développement d'un Design System 'Grimoire' et intégration de Recharts pour l'analyse statistique de jeux experts (ISS Vanguard, Scythe, Terraforming Mars)."
    },
    {
       slug: "mon-portfolio",
-      type: "Projet Personnel",
-      title: "Mon Portfolio",
-      description: "Le site sur lequel vous naviguez actuellement. Développé avec Next.js et Tailwind CSS pour une expérience moderne, responsive et optimisée.",
+      isFeatured: true,
+      type: "Vitrines & Ingénierie Web",
+      title: "Portfolio Professionnel",
+      description: "Conception et développement d'un portfolio haute performance. Une démonstration technique de maîtrise de Next.js 15 et de l'optimisation SEO.",
       image: "/portfolio.webp",
-      tags: ["Next.js", "React", "Tailwind CSS", "Responsive"],
+      tags: ["Next.js 15", "React 18", "Tailwind CSS", "Vercel Analytics"],
       duration: "170 heures",
       links: {
-         github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
+         github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier", // Désormais public
          live: "https://mourier-matthieu.tech"
       },
-      challenge: "L'objectif était de créer une vitrine professionnelle pour présenter mes compétences. Le défi principal était de concevoir un site à la fois esthétique, performant, optimisé pour le SEO et entièrement responsive, en utilisant les meilleures pratiques de Next.js.",
-      solution: "J'ai choisi Next.js pour ses performances et son SEO intégré. L'interface a été construite avec des composants React réutilisables et stylisée avec Tailwind CSS pour un développement rapide et cohérent. Le déploiement continu est assuré par Vercel.",
-      acquiredSkills: ["Développement Next.js", "Composants React réutilisables", "Styling avec Tailwind CSS", "Déploiement continu (Vercel)", "Optimisation SEO (métadonnées)"]
+      challenge: "Créer une plateforme dynamique, SEO-friendly et entièrement responsive servant de support à une identité visuelle forte.",
+      solution: "Mise en place de routes dynamiques (App Router), d'un système de thémisation par variables CSS et d'une architecture de composants réutilisables."
    },
    {
       slug: "kasa-location-immobiliere",
