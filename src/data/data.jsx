@@ -5,31 +5,45 @@ export const projectsData = [
       type: "Application Web Fullstack",
       title: "Meeple & Milestones",
       description: "Plateforme premium de suivi de challenges ludiques. Une expérience immersive mêlant synchronisation temps réel et data-visualisation pour les passionnés de jeux de société.",
-      image: "/meeple-milestones.png",
+      image: "/meeple-milestones.webp",
       tags: ["React 18", "Supabase", "Tailwind CSS", "Recharts", "Framer Motion"],
-      duration: "110 heures (Sprint intensif)",
+      duration: "110 heures (Sprint intensif - Janv/Fév 2026) ",
       links: {
-         github: "https://github.com/Vangelis-26",
+         github: "https://github.com/Vangelis-26/meeple-milestones",
          live: "https://meeple-milestones-gg9c.vercel.app/"
       },
       challenge: "Orchestrer une architecture 'Privacy-First' avec Supabase (RLS) et gérer un cache complexe pour l'API BoardGameGeek afin de garantir une fluidité totale.",
-      solution: "Développement d'un Design System 'Grimoire' et intégration de Recharts pour l'analyse statistique de jeux experts (ISS Vanguard, Scythe, Terraforming Mars)."
+      solution: "Développement d'un Design System 'Grimoire' et intégration de Recharts pour l'analyse statistique de jeux experts.",
+      features: [
+         "Gestion de données complexes pour plus de 15 titres majeurs (Scythe, Terraforming Mars, 7th Continent, etc.).",
+         "Sécurisation granulaire via Row Level Security (RLS) sur Supabase.",
+         "Système de cache intelligent pour optimiser les appels à l'API BoardGameGeek.",
+         "Synchronisation Realtime des scores et des avancées de challenges."
+      ],
+      methodology: "Utilisation du Feature Branching workflow avec Pull Requests systématiques sur GitHub pour garantir la stabilité de la branche main."
    },
    {
       slug: "mon-portfolio",
       isFeatured: true,
-      type: "Vitrines & Ingénierie Web",
+      type: "Ingénierie Web & SEO",
       title: "Portfolio Professionnel",
-      description: "Conception et développement d'un portfolio haute performance. Une démonstration technique de maîtrise de Next.js 15 et de l'optimisation SEO.",
+      description: "Conception d'une plateforme haute performance servant de vitrine technique. Une démonstration de maîtrise de Next.js 15 et de l'optimisation des performances.",
       image: "/portfolio.webp",
       tags: ["Next.js 15", "React 18", "Tailwind CSS", "Vercel Analytics"],
       duration: "170 heures",
       links: {
-         github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier", // Désormais public
+         github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
          live: "https://mourier-matthieu.tech"
       },
       challenge: "Créer une plateforme dynamique, SEO-friendly et entièrement responsive servant de support à une identité visuelle forte.",
-      solution: "Mise en place de routes dynamiques (App Router), d'un système de thémisation par variables CSS et d'une architecture de composants réutilisables."
+      solution: "Mise en place de routes dynamiques (App Router) et d'une architecture de composants réutilisables optimisée pour le Core Web Vitals.",
+      features: [
+         "Routes dynamiques avec generateStaticParams pour une performance maximale",
+         "Design System tokenisé basé sur des variables CSS injectées via Tailwind",
+         "Optimisation SEO avancée (Métadonnées dynamiques, JSON-LD, OpenGraph).",
+         "Intégration de Vercel Analytics pour le suivi des performances en temps réel."
+      ],
+      methodology: "Gestion de projet rigoureuse avec mise à jour continue du README.md et documentation technique du code."
    },
    {
       slug: "kasa-location-immobiliere",
