@@ -13,6 +13,7 @@ export default function Header() {
    const [isNavScrolled, setIsNavScrolled] = useState(false);
    const menuRef = useRef(null);
 
+   // Fermeture du menu mobile lors d'un clic extérieur
    useEffect(() => {
       function handleClickOutside(event) {
          if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -27,18 +28,14 @@ export default function Header() {
       };
    }, [isMenuOpen]);
 
+   // Gestion du scroll pour la fluidité de la barre de navigation
    useEffect(() => {
       const handleScroll = () => {
-         if (window.scrollY > 10) {
-            setIsNavScrolled(true);
-         } else {
-            setIsNavScrolled(false);
-         }
+         setIsNavScrolled(window.scrollY > 50);
       };
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
    }, []);
-
 
    const handleLinkClick = () => {
       setIsMenuOpen(false);
@@ -46,103 +43,113 @@ export default function Header() {
 
    return (
       <>
-         <div className={`
-        w-full sticky top-0 z-30 transition-all duration-300
-        ${isNavScrolled ? 'bg-(--color-background)/80 backdrop-blur-sm border-b border-slate-800' : 'bg-transparent border-b border-transparent'}
-      `}>
-            <div className="px-4 md:px-10">
-               <nav className="flex justify-end md:justify-between items-center py-4">
-                  <Link
-                     href="/"
-                     aria-label="Retour à l'accueil"
-                     className="hidden md:block relative h-12 w-28 transition-transform duration-300 hover:scale-105"
-                  >
-                     <Image
-                        src="/logo.webp"
-                        alt="Logo Mourier Matthieu"
-                        fill
-                        sizes="112px"
-                        style={{ objectFit: 'contain' }}
-                     />
-                  </Link>
+         {/* BARRE DE NAVIGATION : Design Fixed & Discret */}
+         <nav className={`
+            fixed top-0 w-full z-50 transition-all duration-500
+            ${isNavScrolled
+               ? 'py-4 bg-slate-950/80 backdrop-blur-md border-b border-white/5 shadow-2xl'
+               : 'py-8 bg-transparent border-b border-transparent'}
+         `}>
+            <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
 
-                  <div className="hidden md:block">
-                     <NavLinks className="flex" />
-                  </div>
+               {/* Logo adaptatif */}
+               <Link href="/" className={`relative transition-all duration-500 ${isNavScrolled ? 'h-8 w-20' : 'h-10 w-24'}`}>
+                  <Image
+                     src="/logo.webp"
+                     alt="Logo Matthieu Mourier"
+                     fill
+                     style={{ objectFit: 'contain' }}
+                     priority
+                  />
+               </Link>
 
-                  <button
-                     className="md:hidden"
-                     onClick={() => setIsMenuOpen(true)}
-                     aria-label="Ouvrir le menu"
-                  >
-                     <FiMenu size={28} />
-                  </button>
-               </nav>
+               {/* Navigation Desktop épurée */}
+               <div className="hidden md:block">
+                  <NavLinks />
+               </div>
+
+               {/* Toggle Mobile */}
+               <button className="md:hidden text-white" onClick={() => setIsMenuOpen(true)}>
+                  <FiMenu size={28} />
+               </button>
             </div>
-         </div>
+         </nav>
 
-         <header className="relative w-full text-white overflow-hidden -mt-[96px]">
-            <div className="relative w-full h-[45vh] min-h-[400px]">
-               <Image
-                  src="/banniere.webp"
-                  alt="Bannière de la page d'accueil"
-                  fill
-                  sizes="100vw"
-                  style={{ objectFit: 'cover' }}
-                  priority
-                  className="blur-[3px] scale-105"
-               />
-               <div className="absolute inset-0 bg-black/60"></div>
+         <header className="relative w-full h-[75vh] min-h-[650px] flex items-center justify-center overflow-hidden bg-slate-950">
+            <Image
+               src="/banniere.webp"
+               alt="Bannière"
+               fill
+               style={{ objectFit: 'cover' }}
+               priority
+               className="opacity-40"
+            />
 
-               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pt-16 sm:pt-0">
-                  <div className="animate-fade-in-up">
-                     <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg">
-                        Matthieu Mourier
+            <div className="absolute inset-y-0 left-1/2 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent z-20 hidden md:block"></div>
+
+            <div className="relative z-10 w-full max-w-7xl px-6">
+               <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center">
+
+                  {/* GAUCHE : Prénom + Projet */}
+                  <div className="flex-1 flex flex-col items-center md:items-end justify-center py-6 md:pr-12 text-center md:text-right">
+                     <h1 className="text-5xl md:text-8xl font-light text-slate-300 uppercase tracking-tight animate-fade-in-left">
+                        Matthieu
                      </h1>
-                     <p className="mt-4 text-lg md:text-xl font-semibold text-slate-300 drop-shadow-md" style={{ animationDelay: '200ms' }}>
-                        Développeur Web FullStack
-                     </p>
-
-                     <div
-                        className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up"
-                        style={{ animationDelay: '400ms' }}
-                     >
+                     <div className="mt-10 w-full md:w-auto animate-fade-in-up">
                         <Link
                            href="/projets"
-                           className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-(--color-border) text-white md:transform md:transition-transform md:hover:scale-105"
+                           className="inline-block w-full md:w-auto px-10 py-4 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest hover:bg-emerald-500 hover:text-white transition-all shadow-2xl"
                         >
-                           Mes projets
+                           Explorer mes projets
                         </Link>
+                     </div>
+                  </div>
+
+                  {/* DROITE : Nom + Contact */}
+                  <div className="flex-1 flex flex-col items-center md:items-start justify-center py-6 md:pl-12 text-center md:text-left">
+                     <h1 className="text-5xl md:text-8xl font-black text-white italic uppercase tracking-tighter animate-fade-in-right">
+                        Mourier
+                     </h1>
+                     <div className="mt-10 w-full md:w-auto animate-fade-in-up">
                         <Link
                            href="/contact"
-                           className="w-full sm:w-auto px-6 py-2.5 rounded-md font-semibold bg-white/10 border border-white/20 backdrop-blur-sm md:transform md:transition-transform md:hover:scale-105"
+                           className="inline-flex items-center justify-center w-full md:w-auto px-10 py-4 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all backdrop-blur-sm"
                         >
                            Me contacter
                         </Link>
                      </div>
                   </div>
                </div>
+
+               {/* SOUS-TITRE : Centré sous la coupure */}
+               <div className="mt-16 text-center animate-fade-in">
+                  <p className="text-[10px] md:text-xs font-black text-emerald-500 uppercase tracking-[0.5em] opacity-80">
+                     Vision 360° ・ Développeur FullStack
+                  </p>
+               </div>
             </div>
+
+            {/* Fusion avec le reste de la page */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950"></div>
          </header>
 
+         {/* MENU MOBILE OVERLAY */}
          <div
             ref={menuRef}
             className={`
-          fixed top-0 left-0 right-0 z-50 p-6 shadow-lg
-          bg-slate-950/95 backdrop-blur-sm 
-          md:transform md:transition-transform md:duration-300 md:ease-in-out
-          ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}
-        `}
+               fixed inset-0 z-[60] bg-slate-950/98 backdrop-blur-2xl transition-all duration-500
+               ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+            `}
          >
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-end p-8">
                <button onClick={() => setIsMenuOpen(false)} aria-label="Fermer le menu">
-                  <FiX size={32} />
+                  <FiX size={32} className="text-white" />
                </button>
             </div>
-            <div className="flex flex-col items-center justify-center">
-               <NavLinks className="flex-col text-2xl gap-8" onLinkClick={handleLinkClick} />
-               <div className="mt-8 border-t border-slate-700 w-full pt-6 flex justify-center">
-                  <Cv className="bg-(--color-border) text-white border-transparent md:hover:opacity-90" />
+            <div className="h-full flex flex-col items-center justify-center -mt-20 gap-12">
+               <NavLinks className="flex-col text-3xl font-black italic" onLinkClick={handleLinkClick} />
+               <div className="mt-4">
+                  <Cv className="bg-emerald-500 text-slate-900 border-none px-12 py-4 font-black uppercase tracking-widest text-xs" />
                </div>
             </div>
          </div>
