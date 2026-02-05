@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function NavLinks({ className, onLinkClick, isMenuOpen, variant = 'header' }) {
+export default function NavLinks({ className, onLinkClick, variant = 'header' }) {
    const links = [
       { href: "/", label: "Accueil" },
       { href: "/career", label: "Parcours" },
@@ -13,37 +13,33 @@ export default function NavLinks({ className, onLinkClick, isMenuOpen, variant =
    ];
    const pathname = usePathname();
 
-   const baseLinkStyle = "py-2 transition-colors duration-300";
-
-   const headerLinkStyle = `
-        relative after:absolute after:left-0 after:bottom-0 after:h-[2px] 
-        after:w-full after:bg-(--color-border) after:origin-center 
-        md:after:transition-transform after:duration-300
-    `;
-
    return (
-      <ul className={`flex items-center gap-6 text-base font-medium ${className || ''}`}>
-         {links.map((link, index) => {
+      <ul className={`flex items-center gap-8 ${className || ''}`}>
+         {links.map((link) => {
             const isActive = pathname === link.href;
             return (
-               <li
-                  key={link.href}
-                  className={isMenuOpen ? 'md:animate-fade-in-up' : ''}
-                  style={{ animationDelay: isMenuOpen ? `${index * 100}ms` : '0ms' }}
-               >
+               <li key={link.href} className="relative group">
                   <Link
                      href={link.href}
                      onClick={onLinkClick}
                      className={`
-                                ${baseLinkStyle}
-                                ${variant === 'header' ? headerLinkStyle : ''}
-                                ${isActive ? 'text-white' : 'text-slate-400 md:hover:text-white'}
-                                ${variant === 'header' && !isActive ? 'after:scale-x-0' : ''}
-                                ${variant === 'header' && isActive ? 'after:scale-x-100' : ''}
-                                ${variant === 'header' ? 'md:hover:after:scale-x-100' : ''}
-                            `}
+                        block py-2 text-sm font-semibold tracking-wide transition-all duration-300
+                        ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}
+                     `}
                   >
                      {link.label}
+
+                     {/* Ligne laser émeraude pour l'état actif ou hover */}
+                     <span className={`
+                        absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-(--color-border) to-transparent
+                        transition-all duration-500 ease-out
+                        ${isActive ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'}
+                     `}></span>
+
+                     {/* Halo subtil sous le texte actif */}
+                     {isActive && (
+                        <span className="absolute inset-x-0 -bottom-2 h-4 bg-(--color-border)/10 blur-lg rounded-full"></span>
+                     )}
                   </Link>
                </li>
             );
