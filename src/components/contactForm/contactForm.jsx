@@ -236,7 +236,7 @@ export default function ContactForm() {
                </div>
 
                {formStatus.error && (
-                  <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-6 py-4 rounded-xl flex items-center gap-3 text-sm font-medium font-bold">
+                  <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-6 py-4 rounded-xl flex items-center gap-3 text-sm font-bold">
                      <FaExclamationCircle className="shrink-0 text-xl" /> {formStatus.error}
                   </div>
                )}

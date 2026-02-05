@@ -4,3 +4,20 @@
    --color-background: rgb(16, 24, 41);
    --color-border: #10b981;
 }
+
+::selection {
+   background-color: rgb(16, 24, 41) !important;
+   color: inherit !important;
+}
+
+* {
+   caret-color: transparent !important;
+}
+
+input, textarea {
+   caret-color: #10b981 !important;
+}
+
+input::selection, textarea::selection {
+   background-color: #10b981 !important;
+}
