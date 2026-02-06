@@ -5,7 +5,6 @@ import FloatingButtons from "@/components/floatingButton/floatingButton";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
-
 const inter = Inter({
    subsets: ["latin"],
    weight: ['400', '500', '600', '800'],
@@ -15,21 +14,37 @@ export const metadata = {
    metadataBase: new URL('https://mourier-matthieu.tech'),
 
    title: {
-      default: 'Matthieu Mourier | Développeur Web FullStack',
+      default: 'Matthieu Mourier | Développeur Web FullStack & Vision 360°',
       template: '%s | Matthieu Mourier',
    },
-   description: "Découvrez le portfolio de Matthieu Mourier, développeur web FullStack spécialisé dans la création d'applications modernes avec React, Next.js et Node.js à Montélimar.",
 
-   keywords: ['Développeur Web', 'FullStack', 'React', 'Next.js', 'Portfolio', 'Freelance', 'Matthieu Mourier', 'Montélimar'],
+   description: "Expertise hybride : 15 ans de gestion de projet alliés au développement FullStack (Next.js, React, Node.js). Conception d'applications web performantes et sécurisées à Montélimar.",
+
+   keywords: [
+      'Développeur Web FullStack', 'Next.js', 'React', 'Node.js',
+      'Gestion de projet digital', 'Vision 360°', 'Supabase',
+      'Montélimar', 'Drôme', 'Auvergne-Rhône-Alpes', 'Matthieu Mourier'
+   ],
 
    authors: [{ name: "Matthieu Mourier" }],
    creator: "Matthieu Mourier",
 
+   // Favicons et icônes d'appareils
+   icons: {
+      icon: [
+         { url: '/favicon.ico' },
+         { url: '/icon.png', type: 'image/png' },
+      ],
+      apple: [
+         { url: '/apple-icon.png' },
+      ],
+   },
+
    openGraph: {
-      title: "Matthieu Mourier | Développeur Web FullStack",
-      description: "Découvrez le portfolio d'un développeur passionné, alliant expérience en gestion de projet et expertise technique.",
+      title: "Matthieu Mourier | Développeur Web FullStack & Vision 360°",
+      description: "Découvrez le portfolio d'un profil hybride alliant rigueur de gestion de projet et expertise technique moderne.",
       url: "https://mourier-matthieu.tech",
-      siteName: "Portfolio de Matthieu Mourier",
+      siteName: "Matthieu Mourier Portfolio",
       images: [
          {
             url: '/og-image.png',
@@ -41,10 +56,11 @@ export const metadata = {
       locale: 'fr_FR',
       type: 'website',
    },
+
    twitter: {
       card: "summary_large_image",
       title: "Matthieu Mourier - Développeur Web FullStack",
-      description: "Découvrez le portfolio d'un développeur passionné, alliant expérience en gestion de projet et expertise technique.",
+      description: "Vision 360° pour vos solutions web : de la stratégie au déploiement.",
       images: ['/og-image.png'],
    },
 
@@ -62,8 +78,34 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+   const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Matthieu Mourier",
+      "jobTitle": "Développeur Web FullStack",
+      "url": "https://mourier-matthieu.tech",
+      "address": {
+         "@type": "PostalAddress",
+         "addressLocality": "Montélimar",
+         "addressRegion": "Auvergne-Rhône-Alpes",
+         "addressCountry": "FR"
+      },
+      "description": "Développeur FullStack spécialisé en Next.js et React, avec 15 ans d'expérience en gestion de projet.",
+      "knowsAbout": ["Next.js", "React", "Node.js", "Supabase", "Tailwind CSS", "Gestion de projet"],
+      "sameAs": [
+         "https://www.linkedin.com/in/matthieu-mourier-77a5ba182/",
+         "https://github.com/Vangelis-26"
+      ]
+   };
+
    return (
       <html lang="fr">
+         <head>
+            <script
+               type="application/ld+json"
+               dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+         </head>
          <body className={`${inter.className} bg-(--color-background) text-white min-h-screen flex flex-col relative overflow-x-hidden`}>
 
             <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
