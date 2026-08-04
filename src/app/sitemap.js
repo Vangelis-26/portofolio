@@ -1,8 +1,8 @@
 import { projectsData } from '@/data/data';
 
-export default function sitemap() {
-   const baseUrl = 'https://mourier-matthieu.tech';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mourier-matthieu.vercel.app';
 
+export default function sitemap() {
    // Génération dynamique des URLs pour chaque projet
    const projectUrls = projectsData.map((project) => ({
       url: `${baseUrl}/projets/${project.slug}`,

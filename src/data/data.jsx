@@ -33,7 +33,7 @@ export const projectsData = [
       duration: "170 heures",
       links: {
          github: "https://github.com/Vangelis-26/Portfolio_Matthieu_Mourier",
-         live: "https://mourier-matthieu.tech"
+         live: "https://mourier-matthieu.vercel.app"
       },
       challenge: "Créer une plateforme dynamique, SEO-friendly et entièrement responsive servant de support à une identité visuelle forte.",
       solution: "Mise en place de routes dynamiques (App Router) et d'une architecture de composants réutilisables optimisée pour le Core Web Vitals.",

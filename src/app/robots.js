@@ -1,10 +1,12 @@
 export default function robots() {
+   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mourier-matthieu.vercel.app';
+
    return {
       rules: {
          userAgent: '*',
          allow: '/',
          // disallow: '/private/',
       },
-      sitemap: 'https://mourier-matthieu.tech/sitemap.xml',
+      sitemap: `${baseUrl}/sitemap.xml`,
    }
 }

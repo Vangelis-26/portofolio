@@ -5,13 +5,15 @@ import FloatingButtons from "@/components/floatingButton/floatingButton";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mourier-matthieu.vercel.app";
+
 const inter = Inter({
    subsets: ["latin"],
    weight: ['400', '500', '600', '800'],
 });
 
 export const metadata = {
-   metadataBase: new URL('https://mourier-matthieu.tech'),
+   metadataBase: new URL(siteUrl),
 
    title: {
       default: 'Matthieu Mourier | Développeur Web FullStack & Vision 360°',
@@ -43,7 +45,7 @@ export const metadata = {
    openGraph: {
       title: "Matthieu Mourier | Développeur Web FullStack & Vision 360°",
       description: "Découvrez le portfolio d'un profil hybride alliant rigueur de gestion de projet et expertise technique moderne.",
-      url: "https://mourier-matthieu.tech",
+      url: siteUrl,
       siteName: "Matthieu Mourier Portfolio",
       images: [
          {
@@ -83,7 +85,7 @@ export default function RootLayout({ children }) {
       "@type": "Person",
       "name": "Matthieu Mourier",
       "jobTitle": "Développeur Web FullStack",
-      "url": "https://mourier-matthieu.tech",
+      "url": siteUrl,
       "address": {
          "@type": "PostalAddress",
          "addressLocality": "Montélimar",
@@ -115,7 +117,7 @@ export default function RootLayout({ children }) {
 
             <Header />
 
-            <main className="flex-grow relative z-10">
+            <main className="grow relative z-10">
                {children}
                <Analytics />
             </main>

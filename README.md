@@ -40,5 +40,5 @@ Application Premium de suivi de challenges ludiques connectée à l'API BoardGam
 
 Basé à **Montélimar (Drôme)**, je suis ouvert aux opportunités en tant que **Développeur FullStack**, **Technico-Commercial** ou tout rôle hybride mêlant **Commerce et Technologie**.
 
-- **Site Officiel** : [mourier-matthieu.tech](https://mourier-matthieu.tech)
+- **Site Officiel** : [mourier-matthieu.vercel.app](https://mourier-matthieu.vercel.app)
 - **LinkedIn** : [Matthieu Mourier](https://www.linkedin.com/in/matthieu-mourier-77a5ba182/)
